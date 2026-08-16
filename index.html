@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gosiya Masjid</title>
+
+    <meta name="description" content="Gosiya Masjid Official Website">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         START / WELCOME SCREEN
+    ========================== -->
+
+    <div id="welcomeScreen" class="welcome-screen">
+
+        <div class="welcome-box">
+
+            <div class="masjid-logo">
+                🕌
+            </div>
+
+            <h1>Gosiya Masjid</h1>
+
+            <p class="welcome-text">
+                Welcome to Gosiya Masjid
+            </p>
+
+            <p class="choose-text">
+                Please select how you want to continue
+            </p>
+
+            <div class="account-options">
+
+                <!-- Guest -->
+                <button class="account-card"
+                        onclick="enterGuest()">
+
+                    <div class="account-icon">
+                        👤
+                    </div>
+
+                    <h2>Guest Account</h2>
+
+                    <p>
+                        Website की सारी public information देखें
+                    </p>
+
+                    <span>
+                        Continue as Guest →
+                    </span>
+
+                </button>
+
+
+                <!-- Admin -->
+                <button class="account-card admin-card"
+                        onclick="openAdminLogin()">
+
+                    <div class="account-icon">
+                        🔐
+                    </div>
+
+                    <h2>Admin Login</h2>
+
+                    <p>
+                        Website को manage और update करें
+                    </p>
+
+                    <span>
+                        Admin Login →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ADMIN LOGIN POPUP
+    ========================== -->
+
+    <div id="adminLoginBox" class="login-overlay">
+
+        <div class="login-box">
+
+            <button class="close-btn"
+                    onclick="closeAdminLogin()">
+                ×
+            </button>
+
+            <div class="login-icon">
+                🔐
+            </div>
+
+            <h2>Admin Login</h2>
+
+            <p>
+                Authorized administrators only
+            </p>
+
+            <form onsubmit="adminLogin(event)">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <button type="submit"
+                        class="login-button">
+                    Login
+                </button>
+
+            </form>
+
+            <p id="loginMessage"
+               class="login-message">
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PUBLIC WEBSITE
+    ========================== -->
+
+    <div id="publicWebsite" class="website-container">
+
+
+        <!-- HEADER -->
+
+        <header class="main-header">
+
+            <div class="logo-area">
+
+                <div class="logo-icon">
+                    🕌
+                </div>
+
+                <div>
+                    <h2>Gosiya Masjid</h2>
+                    <small>Welcome</small>
+                </div>
+
+            </div>
+
+
+            <!-- Desktop Menu -->
+
+            <nav class="main-nav">
+
+                <a href="#home">Home</a>
+
+                <a href="#namaz">
+                    Namaz Timings
+                </a>
+
+                <a href="#events">
+                    Events
+                </a>
+
+                <a href="#notices">
+                    Notices
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+                <a href="#payments">
+                    Payments
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <button class="menu-button"
+                    onclick="toggleMenu()">
+                ☰
+            </button>
+
+        </header>
+
+
+        <!-- MOBILE MENU -->
+
+        <div id="mobileMenu"
+             class="mobile-menu">
+
+            <a href="#home"
+               onclick="closeMobileMenu()">
+                Home
+            </a>
+
+            <a href="#namaz"
+               onclick="closeMobileMenu()">
+                Namaz Timings
+            </a>
+
+            <a href="#events"
+               onclick="closeMobileMenu()">
+                Events
+            </a>
+
+            <a href="#notices"
+               onclick="closeMobileMenu()">
+                Notices
+            </a>
+
+            <a href="#gallery"
+               onclick="closeMobileMenu()">
+                Gallery
+            </a>
+
+            <a href="#payments"
+               onclick="closeMobileMenu()">
+                Payments
+            </a>
+
+            <a href="#contact"
+               onclick="closeMobileMenu()">
+                Contact
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             HOME
+        ========================== -->
+
+        <section id="home"
+                 class="hero-section">
+
+            <div class="hero-content">
+
+                <span class="welcome-badge">
+                    🕌 Assalamu Alaikum
+                </span>
+
+                <h1>
+                    Welcome to
+                    <br>
+                    <strong>Gosiya Masjid</strong>
+                </h1>
+
+                <p>
+                    Masjid ki important information,
+                    Namaz timings, events, notices
+                    aur announcements ek hi jagah.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#namaz"
+                       class="primary-button">
+                        View Namaz Timings
+                    </a>
+
+                    <a href="#notices"
+                       class="secondary-button">
+                        View Notices
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUICK MENU
+        ========================== -->
+
+        <section class="quick-section">
+
+            <div class="section-heading">
+
+                <span>
+                    Quick Access
+                </span>
+
+                <h2>
+                    Explore Masjid Information
+                </h2>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+                <a href="#namaz"
+                   class="quick-card">
+
+                    <div>🕋</div>
+
+                    <h3>Namaz Timings</h3>
+
+                    <p>
+                        आज की नमाज़ के समय
+                    </p>
+
+                </a>
+
+
+                <a href="#events"
+                   class="quick-card">
+
+                    <div>📅</div>
+
+                    <h3>Events</h3>
+
+                    <p>
+                        Masjid के upcoming events
+                    </p>
+
+                </a>
+
+
+                <a href="#notices"
+                  
