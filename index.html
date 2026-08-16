@@ -4,16 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gosiya Masjid</title>
-<meta name="description" content="Gosiya Masjid Official Website">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -26,7 +23,6 @@ button,input,textarea{
     font-family:inherit;
 }
 
-/* WELCOME */
 .welcome-screen{
     position:fixed;
     inset:0;
@@ -34,8 +30,8 @@ button,input,textarea{
     display:flex;
     align-items:center;
     justify-content:center;
-    z-index:1000;
     padding:20px;
+    z-index:1000;
 }
 
 .welcome-box{
@@ -43,19 +39,18 @@ button,input,textarea{
     padding:30px 20px;
     border-radius:16px;
     text-align:center;
-    max-width:380px;
+    max-width:400px;
     width:100%;
     box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 .masjid-logo{
     font-size:45px;
-    margin-bottom:8px;
 }
 
 .welcome-box h1{
     color:#0b3c28;
-    font-size:22px;
+    margin:8px 0 4px;
 }
 
 .welcome-text{
@@ -64,9 +59,8 @@ button,input,textarea{
 }
 
 .choose-text{
-    margin:15px 0;
-    font-weight:600;
-    font-size:14px;
+    margin:18px 0;
+    font-weight:bold;
 }
 
 .account-options{
@@ -78,7 +72,7 @@ button,input,textarea{
 .account-card{
     border:2px solid #e0e0e0;
     background:#fafafa;
-    padding:14px;
+    padding:15px;
     border-radius:12px;
     cursor:pointer;
     text-align:left;
@@ -90,7 +84,7 @@ button,input,textarea{
 }
 
 .account-icon{
-    font-size:22px;
+    font-size:24px;
 }
 
 .account-card h2{
@@ -101,60 +95,23 @@ button,input,textarea{
 .account-card p{
     font-size:12px;
     color:#666;
-    margin:2px 0 6px;
+    margin:4px 0;
 }
 
 .account-card span{
     font-size:12px;
-    font-weight:600;
+    font-weight:bold;
     color:#0b3c28;
 }
 
-/* MODAL */
-.modal-overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    align-items:center;
-    justify-content:center;
-    z-index:1200;
-    padding:20px;
-}
-
-.modal-box{
-    background:#fff;
-    padding:25px 20px;
-    border-radius:16px;
-    max-width:500px;
-    width:100%;
-    position:relative;
-    max-height:90vh;
-    overflow-y:auto;
-}
-
-.close-btn{
-    position:absolute;
-    top:12px;
-    right:15px;
-    background:#eef2f0;
-    border:none;
-    font-size:18px;
-    width:32px;
-    height:32px;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-/* HEADER */
 .website-container{
     display:none;
 }
 
 .main-header{
     background:#0b3c28;
-    color:#fff;
-    padding:16px 20px;
+    color:white;
+    padding:15px 18px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -170,19 +127,19 @@ button,input,textarea{
 }
 
 .logo-icon{
-    font-size:26px;
+    font-size:27px;
 }
 
 .hero-banner{
     background:linear-gradient(135deg,#0b3c28,#1b6845);
-    color:#fff;
+    color:white;
     text-align:center;
     padding:30px 20px;
 }
 
 .welcome-badge{
     background:rgba(255,255,255,.18);
-    padding:5px 12px;
+    padding:6px 12px;
     border-radius:20px;
     font-size:12px;
 }
@@ -194,12 +151,12 @@ button,input,textarea{
 
 .hero-banner p{
     font-size:13px;
+    opacity:.85;
 }
 
-/* MENU */
 .menu-section{
     padding:25px 15px;
-    max-width:600px;
+    max-width:650px;
     margin:auto;
 }
 
@@ -211,13 +168,12 @@ button,input,textarea{
 .section-title span{
     color:#0b3c28;
     font-size:11px;
-    font-weight:700;
+    font-weight:bold;
     text-transform:uppercase;
 }
 
 .section-title h2{
     font-size:20px;
-    color:#111;
 }
 
 .app-grid{
@@ -227,7 +183,7 @@ button,input,textarea{
 }
 
 .app-card{
-    background:#fff;
+    background:white;
     padding:20px 12px;
     border-radius:14px;
     text-align:center;
@@ -255,9 +211,78 @@ button,input,textarea{
 .app-card p{
     font-size:11px;
     color:#777;
+    margin-top:3px;
 }
 
-/* TABLE */
+.modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    align-items:center;
+    justify-content:center;
+    z-index:1200;
+    padding:15px;
+}
+
+.modal-box{
+    background:white;
+    padding:22px 18px;
+    border-radius:16px;
+    max-width:500px;
+    width:100%;
+    position:relative;
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:12px;
+    background:#eef2f0;
+    border:none;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+    margin-top:15px;
+}
+
+label{
+    font-size:13px;
+    font-weight:bold;
+}
+
+input,textarea,select{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:13px;
+}
+
+textarea{
+    min-height:80px;
+    resize:vertical;
+}
+
+.submit-button{
+    padding:12px;
+    background:#0b3c28;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
 .custom-table{
     width:100%;
     border-collapse:collapse;
@@ -266,7 +291,7 @@ button,input,textarea{
 
 .custom-table th,
 .custom-table td{
-    padding:12px 14px;
+    padding:10px;
     text-align:left;
     font-size:13px;
     border-bottom:1px solid #eee;
@@ -274,44 +299,9 @@ button,input,textarea{
 
 .custom-table th{
     background:#0b3c28;
-    color:#fff;
+    color:white;
 }
 
-/* ITEMS */
-.item-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-top:15px;
-}
-
-.info-item{
-    background:#f8faf9;
-    border:1px solid #e2e8e5;
-    border-left:4px solid #0b3c28;
-    padding:12px 14px;
-    border-radius:8px;
-}
-
-.info-item h4{
-    font-size:14px;
-    color:#0b3c28;
-}
-
-.info-item p{
-    font-size:12px;
-    color:#555;
-    line-height:1.4;
-}
-
-.info-item small{
-    display:block;
-    margin-top:6px;
-    color:#888;
-    font-size:10px;
-}
-
-/* STATS */
 .stats-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -320,213 +310,78 @@ button,input,textarea{
 }
 
 .stat-card{
-    padding:12px;
+    padding:13px;
     border-radius:10px;
     text-align:center;
 }
 
 .stat-card h4{
     font-size:11px;
-    text-transform:uppercase;
 }
 
 .stat-card p{
-    font-size:16px;
+    font-size:17px;
     font-weight:bold;
+    margin-top:5px;
 }
 
-.stat-income{
+.income{
     background:#e8f7ee;
-    color:#0b8043;
+    color:#087b40;
 }
 
-.stat-expense{
+.expense{
     background:#fdf2f2;
     color:#d93025;
 }
 
-.stat-balance{
+.balance{
     grid-column:span 2;
     background:#eef6f2;
     color:#0b3c28;
 }
 
-/* DONATION */
-.donation-box{
-    text-align:center;
-    background:#fafafa;
-    border:1px solid #e0e0e0;
-    padding:16px;
-    border-radius:12px;
-    margin-top:15px;
-}
-
-.upi-badge{
-    background:#eef6f2;
-    color:#0b3c28;
-    padding:8px 12px;
-    border-radius:8px;
-    display:inline-block;
-    font-weight:600;
-    font-size:13px;
-    margin:10px 0;
-}
-
-.copy-btn{
-    background:#0b3c28;
-    color:#fff;
-    border:none;
-    padding:6px 12px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-.bank-details{
-    text-align:left;
-    font-size:12px;
-    background:#fff;
+.info-item{
+    background:#f8faf9;
+    border:1px solid #e2e8e5;
+    border-left:4px solid #0b3c28;
     padding:12px;
     border-radius:8px;
-    margin-top:12px;
-    border:1px dashed #bbb;
-    line-height:1.6;
+    margin-top:10px;
 }
 
-/* CONTACT */
+.info-item h4{
+    color:#0b3c28;
+    font-size:14px;
+}
+
+.info-item p{
+    font-size:12px;
+    margin-top:4px;
+}
+
 .contact-item{
     background:#f8faf9;
     border:1px solid #e2e8e5;
-    padding:12px 14px;
+    padding:12px;
     border-radius:10px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-}
-
-.contact-item h4{
-    font-size:14px;
-    color:#0b3c28;
-}
-
-.contact-item p{
-    font-size:11px;
-    color:#777;
+    margin-top:10px;
 }
 
 .call-btn{
     background:#0b3c28;
-    color:#fff;
+    color:white;
     text-decoration:none;
     padding:7px 12px;
     border-radius:6px;
     font-size:12px;
 }
 
-/* FORMS */
-.modal-box form{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:15px;
-}
-
-.modal-box label{
-    font-size:13px;
-    font-weight:600;
-}
-
-.modal-box input,
-.modal-box textarea{
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:13px;
-}
-
-.modal-box textarea{
-    min-height:80px;
-}
-
-.submit-button{
-    padding:12px;
-    background:#0b3c28;
-    color:#fff;
-    border:none;
-    border-radius:8px;
-    font-weight:600;
-    cursor:pointer;
-}
-
-/* ADMIN */
-.role-badge{
-    display:inline-block;
-    padding:5px 12px;
-    border-radius:20px;
-    font-size:11px;
-    font-weight:bold;
-    margin-top:5px;
-}
-
-.super-role{
-    background:#ffe7e7;
-    color:#c62828;
-}
-
-.manager-role{
-    background:#fff3d6;
-    color:#a56700;
-}
-
-.editor-role{
-    background:#e4f5e9;
-    color:#16723a;
-}
-
-.admin-section{
-    background:#f8faf9;
-    border:1px solid #e2e8e5;
-    border-radius:12px;
-    padding:15px;
-    margin-top:15px;
-}
-
-.admin-section h4{
-    color:#0b3c28;
-    margin-bottom:10px;
-}
-
-.admin-btn{
-    width:100%;
-    padding:11px;
-    margin-top:8px;
-    border:none;
-    border-radius:8px;
-    background:#0b3c28;
-    color:#fff;
-    cursor:pointer;
-}
-
-.admin-btn.danger{
-    background:#d93025;
-}
-
-.admin-btn.secondary{
-    background:#555;
-}
-
-.locked-box{
-    background:#fff1f1;
-    border:1px solid #f2caca;
-    color:#b3261e;
-    padding:12px;
-    border-radius:8px;
-    font-size:12px;
-    margin-top:10px;
-}
-
-/* COMPLAINT */
 .complaint-item{
-    background:#fff;
+    background:white;
     border:1px solid #ddd;
     border-left:4px solid #d93025;
     padding:12px;
@@ -541,122 +396,178 @@ button,input,textarea{
 
 .complaint-item p{
     font-size:12px;
-    margin-top:4px;
-}
-
-.complaint-item small{
-    color:#777;
-    font-size:11px;
+    margin-top:5px;
 }
 
 .delete-btn{
     position:absolute;
-    top:10px;
-    right:10px;
+    right:8px;
+    top:8px;
     background:#ffebeb;
     color:#d93025;
     border:1px solid #f5c2c2;
-    padding:3px 7px;
-    font-size:10px;
+    padding:4px 7px;
     border-radius:4px;
     cursor:pointer;
+    font-size:10px;
+}
+
+.dashboard-header{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.role-badge{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:15px;
+    font-size:11px;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.super{
+    background:#ffe9e9;
+    color:#b00000;
+}
+
+.manager{
+    background:#fff3d8;
+    color:#8a5a00;
+}
+
+.editor-box{
+    background:#f7faf8;
+    padding:12px;
+    border-radius:10px;
+    margin-top:12px;
+    border:1px solid #dfe8e3;
+}
+
+.editor-box h4{
+    color:#0b3c28;
+    margin-bottom:8px;
+}
+
+.logout-btn{
+    background:#d93025;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.small-btn{
+    padding:7px 10px;
+    border:none;
+    border-radius:6px;
+    background:#0b3c28;
+    color:white;
+    cursor:pointer;
+    font-size:11px;
+    margin-top:7px;
+}
+
+.warning{
+    background:#fff7df;
+    color:#805b00;
+    padding:10px;
+    border-radius:8px;
+    font-size:12px;
+    margin-top:10px;
+}
+
+.hidden{
+    display:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- WELCOME -->
+<!-- ================= WELCOME ================= -->
+
 <div id="welcomeScreen" class="welcome-screen">
 
-    <div class="welcome-box">
+<div class="welcome-box">
 
-        <div class="masjid-logo">🕌</div>
+<div class="masjid-logo">🕌</div>
 
-        <h1>Gosiya Masjid</h1>
+<h1>Gosiya Masjid</h1>
 
-        <p class="welcome-text">
-            Yusufpur Chaksaberi
-        </p>
+<p class="welcome-text">
+Yusufpur Chaksaberi
+</p>
 
-        <p class="choose-text">
-            Please select how you want to continue
-        </p>
+<p class="choose-text">
+Please select how you want to continue
+</p>
 
-        <div class="account-options">
+<div class="account-options">
 
-            <button class="account-card" onclick="enterGuest()">
-                <div class="account-icon">👤</div>
-                <h2>Guest Account</h2>
-                <p>Website ki saari details dekhein</p>
-                <span>Continue as Guest →</span>
-            </button>
+<button class="account-card" onclick="enterGuest()">
+<div class="account-icon">👤</div>
+<h2>Guest Account</h2>
+<p>Website ki saari details dekhein</p>
+<span>Continue as Guest →</span>
+</button>
 
-            <button class="account-card"
-                    onclick="openModal('adminModal')">
+<button class="account-card" onclick="openModal('loginModal')">
+<div class="account-icon">🔐</div>
+<h2>Admin / Staff Login</h2>
+<p>Authorized personnel ke liye</p>
+<span>Login →</span>
+</button>
 
-                <div class="account-icon">🔐</div>
-
-                <h2>Admin Login</h2>
-
-                <p>
-                    Authorized personnel only
-                </p>
-
-                <span>
-                    Admin Login →
-                </span>
-
-            </button>
-
-        </div>
-    </div>
+</div>
+</div>
 </div>
 
 
-<!-- WEBSITE -->
+<!-- ================= WEBSITE ================= -->
+
 <div id="publicWebsite" class="website-container">
 
 <header class="main-header">
 
-    <div class="logo-area">
+<div class="logo-area">
 
-        <div class="logo-icon">🕌</div>
+<div class="logo-icon">🕌</div>
 
-        <div>
-            <h2 style="font-size:17px;">
-                Gosiya Masjid
-            </h2>
+<div>
+<h2 style="font-size:17px;">
+Gosiya Masjid
+</h2>
 
-            <small style="opacity:.8;font-size:11px;">
-                Yusufpur Chaksaberi
-            </small>
-        </div>
+<small style="opacity:.8;font-size:11px;">
+Yusufpur Chaksaberi
+</small>
+</div>
 
-    </div>
+</div>
 
-    <button
-        onclick="location.reload()"
-        style="background:none;border:none;color:#fff;font-size:20px;">
-        🔄
-    </button>
+<button onclick="logout()" style="background:none;border:none;color:white;font-size:20px;">
+↩
+</button>
 
 </header>
 
 
 <div class="hero-banner">
 
-    <span class="welcome-badge">
-        🕌 Assalamu Alaikum
-    </span>
+<span class="welcome-badge">
+🕌 Assalamu Alaikum
+</span>
 
-    <h1>
-        Welcome to Portal
-    </h1>
+<h1>
+Welcome to Portal
+</h1>
 
-    <p>
-        Neeche diye gaye kisi bhi option par tap karein
-    </p>
+<p>
+Neeche diye gaye kisi bhi option par tap karein
+</p>
 
 </div>
 
@@ -665,155 +576,104 @@ button,input,textarea{
 
 <div class="section-title">
 
-    <span>
-        Quick Access
-    </span>
+<span>
+Quick Access
+</span>
 
-    <h2>
-        Masjid Menu
-    </h2>
+<h2>
+Masjid Menu
+</h2>
 
 </div>
 
 
 <div class="app-grid">
 
-<div class="app-card"
-     onclick="openModal('namazModal')">
 
-    <div>🕋</div>
-
-    <h3>Namaz</h3>
-
-    <p>Auqaat-e-Namaz</p>
-
+<div class="app-card" onclick="openModal('namazModal')">
+<div>🕋</div>
+<h3>Namaz</h3>
+<p>Auqaat-e-Namaz</p>
 </div>
 
 
-<div class="app-card"
-     onclick="openModal('donationModal')">
-
-    <div>💰</div>
-
-    <h3>Chanda / Donate</h3>
-
-    <p>Online Payment</p>
-
+<div class="app-card" onclick="openModal('donationModal')">
+<div>💰</div>
+<h3>Chanda / Donate</h3>
+<p>Online Payment</p>
 </div>
 
 
-<div class="app-card"
-     onclick="openModal('hisabModal')">
-
-    <div>📊</div>
-
-    <h3>Hisaab-Kitab</h3>
-
-    <p>Aamad-o-Kharch</p>
-
+<div class="app-card" onclick="openModal('hisabModal')">
+<div>📊</div>
+<h3>Hisaab-Kitab</h3>
+<p>Aamad-o-Kharch</p>
 </div>
 
 
-<div class="app-card"
-     onclick="openModal('complaintModal')">
-
-    <div>✍️</div>
-
-    <h3>Shikayat / Mashwara</h3>
-
-    <p>Register Complaint</p>
-
+<div class="app-card" onclick="openModal('complaintModal')">
+<div>✍️</div>
+<h3>Shikayat / Mashwara</h3>
+<p>Register Complaint</p>
 </div>
 
 
-<div class="app-card"
-     onclick="openModal('noticesModal')">
-
-    <div>📢</div>
-
-    <h3>Announcements</h3>
-
-    <p>Zaroori Ittila</p>
-
+<div class="app-card" onclick="openModal('noticesModal')">
+<div>📢</div>
+<h3>Announcements</h3>
+<p>Zaroori Ittila</p>
 </div>
 
 
-<div class="app-card"
-     onclick="openModal('eventsModal')">
-
-    <div>📅</div>
-
-    <h3>Events</h3>
-
-    <p>Upcoming Programs</p>
-
+<div class="app-card" onclick="openModal('eventsModal')">
+<div>📅</div>
+<h3>Events</h3>
+<p>Upcoming Programs</p>
 </div>
 
 
 <a href="https://maps.app.goo.gl/rRJxzmta6CRW4sUPA?g_st=ic"
-   target="_blank"
-   class="app-card">
+target="_blank"
+class="app-card">
 
-    <div>📍</div>
-
-    <h3>Location</h3>
-
-    <p>Google Maps</p>
+<div>📍</div>
+<h3>Location</h3>
+<p>Google Maps</p>
 
 </a>
 
 
-<div class="app-card"
-     onclick="openModal('contactModal')">
-
-    <div>📞</div>
-
-    <h3>Contact</h3>
-
-    <p>Rabta Karein</p>
-
+<div class="app-card" onclick="openModal('contactModal')">
+<div>📞</div>
+<h3>Contact</h3>
+<p>Rabta Karein</p>
 </div>
 
 
-<div class="app-card"
-     onclick="openModal('adminModal')">
-
-    <div>🔐</div>
-
-    <h3>Admin Panel</h3>
-
-    <p>Manage & Inbox</p>
-
+<div class="app-card" onclick="openModal('loginModal')">
+<div>🔐</div>
+<h3>Admin Panel</h3>
+<p>Manage Website</p>
 </div>
+
 
 </div>
 </section>
+
 </div>
 
 
-<!-- NAMAZ -->
+<!-- ================= NAMAZ ================= -->
+
 <div id="namazModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('namazModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('namazModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">🕋</span>
-
-<h3 style="color:#0b3c28">
-Namaz Timings
+<h3 style="text-align:center;color:#0b3c28;">
+🕋 Namaz Timings
 </h3>
-
-<small>
-Jamat ke naye auqaat
-</small>
-
-</div>
 
 <table class="custom-table">
 
@@ -824,39 +684,7 @@ Jamat ke naye auqaat
 </tr>
 </thead>
 
-<tbody id="namazTable">
-
-<tr>
-<td><strong>Fajr</strong></td>
-<td>5:10 AM</td>
-</tr>
-
-<tr>
-<td><strong>Zohar</strong></td>
-<td>1:30 PM</td>
-</tr>
-
-<tr>
-<td><strong>Asr</strong></td>
-<td>5:30 PM</td>
-</tr>
-
-<tr>
-<td><strong>Maghrib</strong></td>
-<td>7:04 PM</td>
-</tr>
-
-<tr>
-<td><strong>Isha</strong></td>
-<td>9:00 PM</td>
-</tr>
-
-<tr>
-<td><strong>Juma</strong></td>
-<td>1:45 PM</td>
-</tr>
-
-</tbody>
+<tbody id="namazTable"></tbody>
 
 </table>
 
@@ -864,155 +692,91 @@ Jamat ke naye auqaat
 </div>
 
 
-<!-- DONATION -->
+<!-- ================= DONATION ================= -->
+
 <div id="donationModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('donationModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('donationModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">💰</span>
-
-<h3 style="color:#0b3c28">
-Masjid Donation / Chanda
+<h3 style="text-align:center;color:#0b3c28;">
+💰 Masjid Donation / Chanda
 </h3>
 
-<small>
-Masjid ke taawun ke liye online payment karein
-</small>
+<div style="text-align:center;margin-top:15px;">
 
-</div>
-
-<div class="donation-box">
-
-<p style="font-size:12px">
-GPay / PhonePe / Paytm ke liye UPI ID:
+<p style="font-size:12px;">
+UPI ID:
 </p>
 
-<div class="upi-badge">
+<div id="upiDisplay"
+style="background:#eef6f2;padding:10px;border-radius:8px;margin-top:6px;font-weight:bold;">
+</div>
 
-<span id="upiText">
-gosiyamasjid@upi
-</span>
-
-<button class="copy-btn"
-onclick="copyUPI()">
-Copy
+<button class="small-btn" onclick="copyUPI()">
+Copy UPI
 </button>
 
+<div class="editor-box">
+
+<h4>
+🏦 Bank Details
+</h4>
+
+<div id="bankDisplay"
+style="font-size:12px;line-height:1.7;">
 </div>
 
-<p id="copyStatus"
-style="display:none;font-size:11px;color:green">
-✅ Copied!
-</p>
-
-<div class="bank-details">
-
-<strong>
-Bank Account Details:
-</strong>
-
-<br>
-
-• <b>Account Name:</b>
-<span id="bankName">
-Gosiya Masjid Committee
-</span>
-
-<br>
-
-• <b>Account Number:</b>
-<span id="accountNumber">
-XXXXXXXXXXXX
-</span>
-
-<br>
-
-• <b>IFSC Code:</b>
-<span id="ifscCode">
-SBIN000XXXX
-</span>
-
-<br>
-
-• <b>Bank Name:</b>
-<span id="bankName2">
-State Bank of India
-</span>
+</div>
 
 </div>
 
 </div>
 </div>
-</div>
 
 
-<!-- HISAB -->
+<!-- ================= HISAB ================= -->
+
 <div id="hisabModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('hisabModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('hisabModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">📊</span>
-
-<h3 style="color:#0b3c28">
-Masjid Hisaab-Kitab
+<h3 style="text-align:center;color:#0b3c28;">
+📊 Masjid Hisaab-Kitab
 </h3>
-
-<small>
-Monthly Financial Summary
-</small>
-
-</div>
-
 
 <div class="stats-grid">
 
-<div class="stat-card stat-income">
+<div class="stat-card income">
 
-<h4>
-Kul Aamad
-</h4>
+<h4>Kul Aamad</h4>
 
-<p id="incomeAmount">
+<p id="incomeDisplay">
 ₹ 45,000
 </p>
 
 </div>
 
 
-<div class="stat-card stat-expense">
+<div class="stat-card expense">
 
-<h4>
-Kul Kharch
-</h4>
+<h4>Kul Kharch</h4>
 
-<p id="expenseAmount">
+<p id="expenseDisplay">
 ₹ 32,500
 </p>
 
 </div>
 
 
-<div class="stat-card stat-balance">
+<div class="stat-card balance">
 
-<h4>
-Masjid Balance
-</h4>
+<h4>Masjid Balance</h4>
 
-<p id="balanceAmount">
+<p id="balanceDisplay">
 ₹ 12,500
 </p>
 
@@ -1023,32 +787,13 @@ Masjid Balance
 <table class="custom-table">
 
 <thead>
-
 <tr>
 <th>Kharch Item</th>
 <th>Raqam</th>
 </tr>
-
 </thead>
 
-<tbody>
-
-<tr>
-<td>Bijli Bill</td>
-<td>₹ 6,500</td>
-</tr>
-
-<tr>
-<td>Imam & Moazzin Tankhwah</td>
-<td>₹ 22,000</td>
-</tr>
-
-<tr>
-<td>Safai & Repairing</td>
-<td>₹ 4,000</td>
-</tr>
-
-</tbody>
+<tbody id="expenseTable"></tbody>
 
 </table>
 
@@ -1056,493 +801,170 @@ Masjid Balance
 </div>
 
 
-<!-- COMPLAINT -->
+<!-- ================= COMPLAINT ================= -->
+
 <div id="complaintModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('complaintModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('complaintModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">✍️</span>
-
-<h3 style="color:#0b3c28">
-Shikayat Ya Mashwara
+<h3 style="text-align:center;color:#0b3c28;">
+✍️ Shikayat Ya Mashwara
 </h3>
-
-</div>
 
 <form onsubmit="submitComplaint(event)">
 
-<label>
-Aapka Naam
-</label>
+<label>Naam</label>
+<input id="compName" required>
 
-<input
-type="text"
-id="compName"
-placeholder="Apna naam"
-required>
+<label>Mobile Number</label>
+<input id="compPhone" type="tel" required>
 
+<label>Message</label>
+<textarea id="compMsg" required></textarea>
 
-<label>
-Mobile Number
-</label>
-
-<input
-type="tel"
-id="compPhone"
-placeholder="Mobile number"
-required>
-
-
-<label>
-Shikayat / Mashwara
-</label>
-
-<textarea
-id="compMsg"
-placeholder="Apna message likhein..."
-required></textarea>
-
-
-<button
-type="submit"
-class="submit-button">
-
+<button class="submit-button">
 Submit Karein
-
 </button>
 
 </form>
 
 <p id="compStatus"
-style="display:none;text-align:center;color:green;font-size:12px">
-✅ Message bhej diya gaya!
+style="display:none;text-align:center;color:green;font-size:12px;margin-top:10px;">
+✅ Message submit ho gaya
 </p>
 
 </div>
 </div>
 
 
-<!-- NOTICES -->
+<!-- ================= NOTICE ================= -->
+
 <div id="noticesModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('noticesModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('noticesModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">📢</span>
-
-<h3 style="color:#0b3c28">
-Important Announcements
+<h3 style="text-align:center;color:#0b3c28;">
+📢 Announcements
 </h3>
 
-</div>
-
-<div id="noticesContainer"
-class="item-list">
-
-<div class="info-item">
-
-<h4>
-🕌 Juma Namaz Pabandagi
-</h4>
-
-<p>
-Tammam hazraat se guzarish hai ki Juma ki namaz ke liye waqt par tashreef layein.
-</p>
-
-<small>
-📌 Masjid Committee
-</small>
-
-</div>
-
-<div class="info-item">
-
-<h4>
-🧼 Safai Ka Khas Khayal
-</h4>
-
-<p>
-Wazu khane aur masjid ke sahan me safai ka khas khayal rakhein.
-</p>
-
-<small>
-📌 Notice Board
-</small>
-
-</div>
+<div id="noticeList"></div>
 
 </div>
 </div>
-</div>
 
 
-<!-- EVENTS -->
+<!-- ================= EVENTS ================= -->
+
 <div id="eventsModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('eventsModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('eventsModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">📅</span>
-
-<h3 style="color:#0b3c28">
-Upcoming Events
+<h3 style="text-align:center;color:#0b3c28;">
+📅 Events
 </h3>
 
-</div>
-
-<div id="eventsContainer"
-class="item-list">
-
-<div class="info-item">
-
-<h4>
-📖 Dars-e-Quran / Hadees
-</h4>
-
-<p>
-Har Ravivar Sunday Isha ki namaz ke baad dars.
-</p>
-
-<small>
-⏰ Har Sunday
-</small>
-
-</div>
-
-<div class="info-item">
-
-<h4>
-🌙 Shab-e-Juma Majlis
-</h4>
-
-<p>
-Jumerat ko baad namaz-e-Maghrib zikr aur dua.
-</p>
-
-<small>
-⏰ Har Jumerat
-</small>
-
-</div>
+<div id="eventList"></div>
 
 </div>
 </div>
-</div>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
+
 <div id="contactModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('contactModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('contactModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">📞</span>
-
-<h3 style="color:#0b3c28">
-Masjid Contacts
+<h3 style="text-align:center;color:#0b3c28;">
+📞 Masjid Contacts
 </h3>
 
-</div>
-
-<div class="item-list">
-
-<div class="contact-item">
-
-<div>
-<h4>Imam Sahab</h4>
-<p>79994 65053</p>
-</div>
-
-<a href="tel:7999465053"
-class="call-btn">
-📞 Call
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<div>
-<h4>Khazanchi</h4>
-<p>+91 8851-165979</p>
-</div>
-
-<a href="tel:+918851165979"
-class="call-btn">
-📞 Call
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<div>
-<h4>Main Accountant</h4>
-<p>+91 74889 87940</p>
-</div>
-
-<a href="tel:+917488987940"
-class="call-btn">
-📞 Call
-</a>
-
-</div>
+<div id="contactList"></div>
 
 </div>
 </div>
-</div>
 
 
-<!-- LOGIN -->
-<div id="adminModal" class="modal-overlay">
+<!-- ================= LOGIN ================= -->
+
+<div id="loginModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="closeModal('adminModal')">
-✕
-</button>
+<button class="close-btn" onclick="closeModal('loginModal')">✕</button>
 
-<div style="text-align:center">
-
-<span style="font-size:30px">
-🔐
-</span>
-
-<h3 style="color:#0b3c28">
-Admin Login
+<h3 style="text-align:center;color:#0b3c28;">
+🔐 Staff Login
 </h3>
 
-<small>
-Authorized personnel only
-</small>
+<form onsubmit="login(event)">
 
-</div>
+<label>Username</label>
 
-<form onsubmit="adminLogin(event)">
-
-<label>
-Username
-</label>
-
-<input
-type="text"
-id="username"
-placeholder="Username"
-required>
+<input id="loginUser" required>
 
 
-<label>
-Password
-</label>
+<label>Password</label>
 
-<input
-type="password"
-id="password"
-placeholder="Password"
-required>
+<input id="loginPass" type="password" required>
 
 
-<button
-type="submit"
-class="submit-button">
-
+<button class="submit-button">
 Login
-
 </button>
 
 </form>
 
 <p id="loginMessage"
-style="text-align:center;font-size:12px;margin-top:10px">
+style="text-align:center;font-size:12px;margin-top:10px;">
 </p>
 
+<div class="warning">
+Demo accounts:<br><br>
+🔴 Super Admin: <b>admin</b> / <b>admin123</b><br>
+🟠 Sub Admin: <b>manager</b> / <b>manager123</b>
+</div>
+
 </div>
 </div>
 
 
-<!-- ADMIN DASHBOARD -->
-<div id="adminDashboardModal"
-class="modal-overlay">
+<!-- ================= DASHBOARD ================= -->
+
+<div id="dashboardModal" class="modal-overlay">
 
 <div class="modal-box">
 
-<button class="close-btn"
-onclick="logoutAdmin()">
+<button class="close-btn" onclick="closeModal('dashboardModal')">
 ✕
 </button>
 
-<div style="text-align:center">
+<div class="dashboard-header">
 
-<span style="font-size:32px">
-🛡️
-</span>
+<div style="font-size:32px;">
+⚙️
+</div>
 
-<h3 style="color:#0b3c28">
+<h3 style="color:#0b3c28;">
 Admin Dashboard
 </h3>
 
-<div id="currentRoleBadge"></div>
-
-</div>
-
-
-<!-- GENERAL CONTENT -->
-<div class="admin-section">
-
-<h4>
-📝 Information Control
-</h4>
-
-<button
-class="admin-btn"
-onclick="openEditor('namaz')">
-
-🕋 Edit Namaz Timing
-
-</button>
-
-
-<button
-class="admin-btn"
-onclick="openEditor('notice')">
-
-📢 Edit Announcement
-
-</button>
-
-
-<button
-class="admin-btn"
-onclick="openEditor('event')">
-
-📅 Edit Event
-
-</button>
-
-
-<button
-class="admin-btn"
-onclick="openEditor('contact')">
-
-📞 Edit Contact
-
-</button>
-
-</div>
-
-
-<!-- FINANCIAL -->
-<div id="financialSection"
-class="admin-section">
-
-<h4>
-💰 Financial Control
-</h4>
-
-<p style="font-size:12px;color:#666">
-Sirf Super Admin ke liye.
-</p>
-
-<button
-class="admin-btn"
-onclick="openEditor('finance')">
-
-💰 Edit Bank / UPI / Hisaab
-
-</button>
-
-</div>
-
-
-<!-- COMPLAINTS -->
-<div class="admin-section">
-
-<h4>
-📋 Complaints & Mashware
-</h4>
-
-<div id="complaintsContainer">
+<div id="roleBadge"
+class="role-badge">
 </div>
 
 </div>
 
 
-<button
-class="admin-btn secondary"
-onclick="logoutAdmin()">
-
-Logout
-
-</button>
-
-</div>
-</div>
-
-
-<!-- EDITOR -->
-<div id="editorModal"
-class="modal-overlay">
-
-<div class="modal-box">
-
-<button class="close-btn"
-onclick="closeModal('editorModal')">
-✕
-</button>
-
-<h3
-id="editorTitle"
-style="color:#0b3c28">
-Edit
-</h3>
-
-<form
-id="editorForm"
-onsubmit="saveEditor(event)">
-
-<div id="editorFields"></div>
-
-<button
-type="submit"
-class="submit-button">
-
-Save Changes
-
-</button>
-
-</form>
-
-<p id="editorMessage"
-style="text-align:center;font-size:12px">
-</p>
+<div id="dashboardContent"></div>
 
 </div>
 </div>
@@ -1550,1038 +972,1102 @@ style="text-align:center;font-size:12px">
 
 <script>
 
-/* =========================
-   BASIC FUNCTIONS
-========================= */
-
-function enterGuest(){
-
-    document.getElementById(
-        "welcomeScreen"
-    ).style.display="none";
-
-    document.getElementById(
-        "publicWebsite"
-    ).style.display="block";
-}
-
-
-function openModal(id){
-
-    document.getElementById(id)
-        .style.display="flex";
-
-}
-
-
-function closeModal(id){
-
-    document.getElementById(id)
-        .style.display="none";
-
-}
-
-
-/* =========================
-   COPY UPI
-========================= */
-
-function copyUPI(){
-
-    const upi =
-        document.getElementById(
-            "upiText"
-        ).innerText;
-
-    navigator.clipboard.writeText(upi)
-    .then(()=>{
-
-        const status =
-            document.getElementById(
-                "copyStatus"
-            );
-
-        status.style.display="block";
-
-        setTimeout(()=>{
-            status.style.display="none";
-        },2000);
-
-    });
-
-}
-
-
-/* =========================
-   DEFAULT DATA
-========================= */
+/* =====================================================
+   DEFAULT WEBSITE DATA
+===================================================== */
 
 const defaultData = {
 
-    upi:"gosiyamasjid@upi",
+namaz:[
+["Fajr","5:10 AM"],
+["Zohar","1:30 PM"],
+["Asr","5:30 PM"],
+["Maghrib","7:04 PM"],
+["Isha","9:00 PM"],
+["Juma","1:45 PM"]
+],
 
-    bankName:"Gosiya Masjid Committee",
+upi:"gosiyamasjid@upi",
 
-    accountNumber:"XXXXXXXXXXXX",
+bank:{
+name:"Gosiya Masjid Committee",
+account:"XXXXXXXXXXXX",
+ifsc:"SBIN000XXXX",
+bank:"State Bank of India"
+},
 
-    ifsc:"SBIN000XXXX",
+income:45000,
+expense:32500,
+balance:12500,
 
-    bankName2:"State Bank of India",
+expenses:[
+["Bijli Bill",6500],
+["Imam & Moazzin Tankhwah",22000],
+["Safai & Repairing",4000]
+],
 
-    income:"45000",
+notices:[
+{
+title:"🕌 Juma Namaz Pabandagi",
+text:"Tammam hazraat se guzarish hai ki Juma ki namaz ke liye waqt par tashreef layein."
+},
+{
+title:"🧼 Safai Ka Khas Khayal",
+text:"Wazu khane aur masjid ke sahan me safai ka khas khayal rakhein."
+}
+],
 
-    expense:"32500",
+events:[
+{
+title:"📖 Dars-e-Quran / Hadees",
+text:"Har Ravivar Sunday Isha ke baad dars ka ehtemam kiya jata hai."
+},
+{
+title:"🌙 Shab-e-Juma Majlis",
+text:"Jumerat ko baad namaz-e-Maghrib zikr aur dua ki mahfil hoti hai."
+}
+],
 
-    balance:"12500"
+contacts:[
+["Imam Sahab","7999465053"],
+["Khazanchi","8851165979"],
+["Main Accountant","7488987940"]
+]
 
 };
 
 
-/* =========================
-   LOAD DATA
-========================= */
+/* =====================================================
+   LOAD / SAVE
+===================================================== */
 
-function loadData(){
+function getData(){
 
-    let data =
-        JSON.parse(
-            localStorage.getItem(
-                "masjidData"
-            ) || "null"
-        );
+let saved=localStorage.getItem("gosiyaWebsiteData");
 
-    if(!data){
+if(saved){
+return JSON.parse(saved);
+}
 
-        data = defaultData;
+localStorage.setItem(
+"gosiyaWebsiteData",
+JSON.stringify(defaultData)
+);
 
-        localStorage.setItem(
-            "masjidData",
-            JSON.stringify(data)
-        );
+return JSON.parse(JSON.stringify(defaultData));
+}
 
-    }
-
-    document.getElementById(
-        "upiText"
-    ).innerText=data.upi;
-
-    document.getElementById(
-        "bankName"
-    ).innerText=data.bankName;
-
-    document.getElementById(
-        "accountNumber"
-    ).innerText=data.accountNumber;
-
-    document.getElementById(
-        "ifscCode"
-    ).innerText=data.ifsc;
-
-    document.getElementById(
-        "bankName2"
-    ).innerText=data.bankName2;
-
-    document.getElementById(
-        "incomeAmount"
-    ).innerText="₹ "+Number(data.income).toLocaleString("en-IN");
-
-    document.getElementById(
-        "expenseAmount"
-    ).innerText="₹ "+Number(data.expense).toLocaleString("en-IN");
-
-    document.getElementById(
-        "balanceAmount"
-    ).innerText="₹ "+Number(data.balance).toLocaleString("en-IN");
-
+function saveData(data){
+localStorage.setItem(
+"gosiyaWebsiteData",
+JSON.stringify(data)
+);
 }
 
 
-/* =========================
-   THREE LEVEL USERS
-========================= */
+/* =====================================================
+   LOGIN USERS
+===================================================== */
 
-const users = {
+const users={
 
-    superadmin:{
-        password:"super123",
-        role:"super"
-    },
+admin:{
+password:"admin123",
+role:"super"
+},
 
-    manager:{
-        password:"manager123",
-        role:"manager"
-    },
-
-    editor:{
-        password:"editor123",
-        role:"editor"
-    }
+manager:{
+password:"manager123",
+role:"manager"
+}
 
 };
 
-
-let currentUser = null;
-
-
-/* =========================
-   LOGIN
-========================= */
-
-function adminLogin(e){
-
-    e.preventDefault();
-
-    const username =
-        document.getElementById(
-            "username"
-        ).value.trim();
-
-    const password =
-        document.getElementById(
-            "password"
-        ).value;
-
-    const msg =
-        document.getElementById(
-            "loginMessage"
-        );
+let currentUser=null;
 
 
-    if(
-        users[username] &&
-        users[username].password === password
-    ){
+/* =====================================================
+   GENERAL
+===================================================== */
 
-        currentUser = {
+function enterGuest(){
 
-            username:username,
+document.getElementById("welcomeScreen").style.display="none";
 
-            role:users[username].role
+document.getElementById("publicWebsite").style.display="block";
 
-        };
+renderWebsite();
 
+}
 
-        msg.style.color="green";
+function openModal(id){
 
-        msg.innerText=
-            "Login successful!";
+document.getElementById(id).style.display="flex";
 
+}
 
-        setTimeout(()=>{
+function closeModal(id){
 
-            closeModal("adminModal");
+document.getElementById(id).style.display="none";
 
-            enterGuest();
+}
 
-            setupDashboard();
+function logout(){
 
-            loadComplaints();
+currentUser=null;
 
-            openModal(
-                "adminDashboardModal"
-            );
+document.getElementById("publicWebsite").style.display="none";
 
-        },500);
+document.getElementById("welcomeScreen").style.display="flex";
 
-
-    }else{
-
-        msg.style.color="red";
-
-        msg.innerText=
-            "Galat username ya password!";
-
-    }
+closeModal("dashboardModal");
 
 }
 
 
-/* =========================
-   DASHBOARD ROLE
-========================= */
+/* =====================================================
+   RENDER WEBSITE
+===================================================== */
 
-function setupDashboard(){
+function renderWebsite(){
 
-    const badge =
-        document.getElementById(
-            "currentRoleBadge"
-        );
-
-    const financial =
-        document.getElementById(
-            "financialSection"
-        );
+const data=getData();
 
 
-    if(currentUser.role==="super"){
+/* NAMAZ */
 
-        badge.innerHTML =
-            `<span class="role-badge super-role">
-            🔴 SUPER ADMIN
-            </span>`;
+document.getElementById("namazTable").innerHTML=
 
-        financial.style.display="block";
+data.namaz.map(n=>`
 
-    }
+<tr>
+<td><b>${n[0]}</b></td>
+<td>${n[1]}</td>
+</tr>
 
-
-    else if(currentUser.role==="manager"){
-
-        badge.innerHTML =
-            `<span class="role-badge manager-role">
-            🟠 MANAGER
-            </span>`;
-
-        financial.style.display="none";
-
-    }
+`).join("");
 
 
-    else if(currentUser.role==="editor"){
+/* UPI */
 
-        badge.innerHTML =
-            `<span class="role-badge editor-role">
-            🟢 EDITOR
-            </span>`;
+document.getElementById("upiDisplay").innerText=data.upi;
 
-        financial.style.display="none";
 
-    }
+/* BANK */
+
+document.getElementById("bankDisplay").innerHTML=`
+
+<b>Account Name:</b> ${data.bank.name}<br>
+<b>Account Number:</b> ${data.bank.account}<br>
+<b>IFSC:</b> ${data.bank.ifsc}<br>
+<b>Bank:</b> ${data.bank.bank}
+
+`;
+
+
+/* FINANCE */
+
+document.getElementById("incomeDisplay").innerText=
+"₹ "+Number(data.income).toLocaleString("en-IN");
+
+document.getElementById("expenseDisplay").innerText=
+"₹ "+Number(data.expense).toLocaleString("en-IN");
+
+document.getElementById("balanceDisplay").innerText=
+"₹ "+Number(data.balance).toLocaleString("en-IN");
+
+
+document.getElementById("expenseTable").innerHTML=
+
+data.expenses.map(e=>`
+
+<tr>
+<td>${e[0]}</td>
+<td>₹ ${Number(e[1]).toLocaleString("en-IN")}</td>
+</tr>
+
+`).join("");
+
+
+/* NOTICE */
+
+document.getElementById("noticeList").innerHTML=
+
+data.notices.map(n=>`
+
+<div class="info-item">
+
+<h4>${n.title}</h4>
+
+<p>${n.text}</p>
+
+</div>
+
+`).join("");
+
+
+/* EVENTS */
+
+document.getElementById("eventList").innerHTML=
+
+data.events.map(e=>`
+
+<div class="info-item">
+
+<h4>${e.title}</h4>
+
+<p>${e.text}</p>
+
+</div>
+
+`).join("");
+
+
+/* CONTACT */
+
+document.getElementById("contactList").innerHTML=
+
+data.contacts.map(c=>`
+
+<div class="contact-item">
+
+<div>
+
+<h4 style="color:#0b3c28;font-size:14px;">
+${c[0]}
+</h4>
+
+<p style="font-size:11px;color:#777;">
+${c[1]}
+</p>
+
+</div>
+
+<a class="call-btn" href="tel:${c[1]}">
+📞 Call
+</a>
+
+</div>
+
+`).join("");
 
 }
 
 
-/* =========================
-   EDITOR
-========================= */
+/* =====================================================
+   COPY UPI
+===================================================== */
 
-let editingType="";
+function copyUPI(){
 
+navigator.clipboard.writeText(
+getData().upi
+);
 
-function openEditor(type){
-
-    if(!currentUser){
-        return;
-    }
-
-
-    /* FINANCE ONLY SUPER */
-
-    if(
-        type==="finance" &&
-        currentUser.role!=="super"
-    ){
-
-        alert(
-            "❌ Sirf Super Admin financial details edit kar sakta hai."
-        );
-
-        return;
-
-    }
-
-
-    editingType=type;
-
-
-    const title =
-        document.getElementById(
-            "editorTitle"
-        );
-
-    const fields =
-        document.getElementById(
-            "editorFields"
-        );
-
-
-    fields.innerHTML="";
-
-
-    /* NAMAZ */
-
-    if(type==="namaz"){
-
-        title.innerText=
-            "🕋 Edit Namaz Timing";
-
-        fields.innerHTML=`
-
-        <label>Fajr</label>
-        <input id="editFajr"
-        value="5:10 AM">
-
-        <label>Zohar</label>
-        <input id="editZohar"
-        value="1:30 PM">
-
-        <label>Asr</label>
-        <input id="editAsr"
-        value="5:30 PM">
-
-        <label>Maghrib</label>
-        <input id="editMaghrib"
-        value="7:04 PM">
-
-        <label>Isha</label>
-        <input id="editIsha"
-        value="9:00 PM">
-
-        <label>Juma</label>
-        <input id="editJuma"
-        value="1:45 PM">
-
-        `;
-
-    }
-
-
-    /* NOTICE */
-
-    if(type==="notice"){
-
-        title.innerText=
-            "📢 Edit Announcement";
-
-        fields.innerHTML=`
-
-        <label>Title</label>
-
-        <input
-        id="noticeTitle"
-        value="🕌 Juma Namaz Pabandagi">
-
-        <label>Details</label>
-
-        <textarea
-        id="noticeText">Tammam hazraat se guzarish hai ki Juma ki namaz ke liye waqt par tashreef layein.</textarea>
-
-        `;
-
-    }
-
-
-    /* EVENT */
-
-    if(type==="event"){
-
-        title.innerText=
-            "📅 Edit Event";
-
-        fields.innerHTML=`
-
-        <label>Event Title</label>
-
-        <input
-        id="eventTitle"
-        value="📖 Dars-e-Quran / Hadees">
-
-        <label>Details</label>
-
-        <textarea
-        id="eventText">Har Ravivar Sunday Isha ki namaz ke baad dars.</textarea>
-
-        `;
-
-    }
-
-
-    /* CONTACT */
-
-    if(type==="contact"){
-
-        title.innerText=
-            "📞 Edit Contact";
-
-        fields.innerHTML=`
-
-        <label>Imam Sahab Number</label>
-
-        <input
-        id="imamPhone"
-        value="7999465053">
-
-        <label>Khazanchi Number</label>
-
-        <input
-        id="khazanchiPhone"
-        value="8851165979">
-
-        <label>Main Accountant Number</label>
-
-        <input
-        id="accountantPhone"
-        value="7488987940">
-
-        `;
-
-    }
-
-
-    /* FINANCE */
-
-    if(type==="finance"){
-
-        title.innerText=
-            "💰 Financial Control";
-
-        let data =
-            JSON.parse(
-                localStorage.getItem(
-                    "masjidData"
-                )
-            );
-
-
-        fields.innerHTML=`
-
-        <label>UPI ID</label>
-
-        <input
-        id="editUPI"
-        value="${data.upi}">
-
-        <label>Account Name</label>
-
-        <input
-        id="editBankName"
-        value="${data.bankName}">
-
-        <label>Account Number</label>
-
-        <input
-        id="editAccount"
-        value="${data.accountNumber}">
-
-        <label>IFSC Code</label>
-
-        <input
-        id="editIFSC"
-        value="${data.ifsc}">
-
-        <label>Bank Name</label>
-
-        <input
-        id="editBankName2"
-        value="${data.bankName2}">
-
-        <label>Total Income</label>
-
-        <input
-        type="number"
-        id="editIncome"
-        value="${data.income}">
-
-        <label>Total Expense</label>
-
-        <input
-        type="number"
-        id="editExpense"
-        value="${data.expense}">
-
-        <label>Masjid Balance</label>
-
-        <input
-        type="number"
-        id="editBalance"
-        value="${data.balance}">
-
-        `;
-
-    }
-
-
-    openModal("editorModal");
+alert("UPI ID copied!");
 
 }
 
 
-/* =========================
-   SAVE EDITOR
-========================= */
-
-function saveEditor(e){
-
-    e.preventDefault();
-
-
-    /* FINANCE */
-
-    if(editingType==="finance"){
-
-        if(
-            currentUser.role!=="super"
-        ){
-
-            alert(
-                "❌ Access denied"
-            );
-
-            return;
-
-        }
-
-
-        const data={
-
-            upi:
-                document.getElementById(
-                    "editUPI"
-                ).value,
-
-            bankName:
-                document.getElementById(
-                    "editBankName"
-                ).value,
-
-            accountNumber:
-                document.getElementById(
-                    "editAccount"
-                ).value,
-
-            ifsc:
-                document.getElementById(
-                    "editIFSC"
-                ).value,
-
-            bankName2:
-                document.getElementById(
-                    "editBankName2"
-                ).value,
-
-            income:
-                document.getElementById(
-                    "editIncome"
-                ).value,
-
-            expense:
-                document.getElementById(
-                    "editExpense"
-                ).value,
-
-            balance:
-                document.getElementById(
-                    "editBalance"
-                ).value
-
-        };
-
-
-        localStorage.setItem(
-            "masjidData",
-            JSON.stringify(data)
-        );
-
-
-        loadData();
-
-
-        showSaved();
-
-        return;
-
-    }
-
-
-    /* NOTICE */
-
-    if(editingType==="notice"){
-
-        const title =
-            document.getElementById(
-                "noticeTitle"
-            ).value;
-
-        const text =
-            document.getElementById(
-                "noticeText"
-            ).value;
-
-
-        document.getElementById(
-            "noticesContainer"
-        ).innerHTML=`
-
-        <div class="info-item">
-
-            <h4>${title}</h4>
-
-            <p>${text}</p>
-
-            <small>
-            📌 Masjid Committee
-            </small>
-
-        </div>
-
-        `;
-
-    }
-
-
-    /* EVENT */
-
-    if(editingType==="event"){
-
-        const title =
-            document.getElementById(
-                "eventTitle"
-            ).value;
-
-        const text =
-            document.getElementById(
-                "eventText"
-            ).value;
-
-
-        document.getElementById(
-            "eventsContainer"
-        ).innerHTML=`
-
-        <div class="info-item">
-
-            <h4>${title}</h4>
-
-            <p>${text}</p>
-
-            <small>
-            📅 Masjid Program
-            </small>
-
-        </div>
-
-        `;
-
-    }
-
-
-    /* CONTACT */
-
-    if(editingType==="contact"){
-
-        const imam =
-            document.getElementById(
-                "imamPhone"
-            ).value;
-
-        const khazanchi =
-            document.getElementById(
-                "khazanchiPhone"
-            ).value;
-
-        const accountant =
-            document.getElementById(
-                "accountantPhone"
-            ).value;
-
-
-        document.querySelector(
-            "#contactModal .item-list"
-        ).innerHTML=`
-
-        <div class="contact-item">
-
-            <div>
-                <h4>Imam Sahab</h4>
-                <p>${imam}</p>
-            </div>
-
-            <a href="tel:${imam}"
-            class="call-btn">
-            📞 Call
-            </a>
-
-        </div>
-
-
-        <div class="contact-item">
-
-            <div>
-                <h4>Khazanchi</h4>
-                <p>${khazanchi}</p>
-            </div>
-
-            <a href="tel:${khazanchi}"
-            class="call-btn">
-            📞 Call
-            </a>
-
-        </div>
-
-
-        <div class="contact-item">
-
-            <div>
-                <h4>Main Accountant</h4>
-                <p>${accountant}</p>
-            </div>
-
-            <a href="tel:${accountant}"
-            class="call-btn">
-            📞 Call
-            </a>
-
-        </div>
-
-        `;
-
-    }
-
-
-    showSaved();
-
-}
-
-
-function showSaved(){
-
-    const msg =
-        document.getElementById(
-            "editorMessage"
-        );
-
-    msg.style.color="green";
-
-    msg.innerText=
-        "✅ Changes saved successfully!";
-
-
-    setTimeout(()=>{
-
-        closeModal("editorModal");
-
-        msg.innerText="";
-
-    },900);
-
-}
-
-
-/* =========================
+/* =====================================================
    COMPLAINT
-========================= */
+===================================================== */
 
 function submitComplaint(e){
 
-    e.preventDefault();
+e.preventDefault();
 
+const complaint={
 
-    const complaint={
+id:Date.now(),
 
-        id:Date.now(),
+name:document.getElementById("compName").value,
 
-        name:
-            document.getElementById(
-                "compName"
-            ).value,
+phone:document.getElementById("compPhone").value,
 
-        phone:
-            document.getElementById(
-                "compPhone"
-            ).value,
+msg:document.getElementById("compMsg").value,
 
-        msg:
-            document.getElementById(
-                "compMsg"
-            ).value,
+time:new Date().toLocaleString()
 
-        time:
-            new Date().toLocaleString()
+};
 
-    };
+let list=
 
+JSON.parse(
+localStorage.getItem("masjidComplaints") || "[]"
+);
 
-    let list =
-        JSON.parse(
-            localStorage.getItem(
-                "masjidComplaints"
-            ) || "[]"
-        );
+list.unshift(complaint);
 
+localStorage.setItem(
+"masjidComplaints",
+JSON.stringify(list)
+);
 
-    list.unshift(complaint);
+document.getElementById("compStatus").style.display="block";
 
+e.target.reset();
 
-    localStorage.setItem(
-        "masjidComplaints",
-        JSON.stringify(list)
-    );
+setTimeout(()=>{
 
+document.getElementById("compStatus").style.display="none";
 
-    document.getElementById(
-        "compStatus"
-    ).style.display="block";
+closeModal("complaintModal");
 
-
-    e.target.reset();
-
-
-    setTimeout(()=>{
-
-        document.getElementById(
-            "compStatus"
-        ).style.display="none";
-
-        closeModal(
-            "complaintModal"
-        );
-
-    },1500);
+},1500);
 
 }
 
 
-/* =========================
-   LOAD COMPLAINTS
-========================= */
+/* =====================================================
+   LOGIN
+===================================================== */
 
-function loadComplaints(){
+function login(e){
 
-    const container =
-        document.getElementById(
-            "complaintsContainer"
-        );
+e.preventDefault();
 
+const username=
+document.getElementById("loginUser").value.trim();
 
-    const list =
-        JSON.parse(
-            localStorage.getItem(
-                "masjidComplaints"
-            ) || "[]"
-        );
+const password=
+document.getElementById("loginPass").value;
+
+const msg=
+document.getElementById("loginMessage");
 
 
-    if(list.length===0){
+if(
+users[username] &&
+users[username].password===password
+){
 
-        container.innerHTML=
-            `<p style="text-align:center;color:#888;font-size:12px">
-            Abhi koi complaint nahi aayi.
-            </p>`;
+currentUser={
+username:username,
+role:users[username].role
+};
 
-        return;
+msg.style.color="green";
+msg.innerText="Login successful!";
 
-    }
+setTimeout(()=>{
 
+closeModal("loginModal");
 
-    container.innerHTML =
-        list.map(item=>`
+enterGuest();
 
-        <div class="complaint-item">
+openDashboard();
 
-            <button
-            class="delete-btn"
-            onclick="deleteComplaint(${item.id})">
+},500);
 
-            Delete
+}
 
-            </button>
+else{
 
-            <h4>
-            👤 ${item.name}
-            </h4>
+msg.style.color="red";
 
-            <p>
-            📞 ${item.phone}
-            </p>
+msg.innerText=
+"Galat username ya password!";
 
-            <p>
-            ${item.msg}
-            </p>
-
-            <small>
-            ⏰ ${item.time}
-            </small>
-
-        </div>
-
-        `).join("");
+}
 
 }
 
 
-/* =========================
-   DELETE COMPLAINT
-========================= */
+/* =====================================================
+   OPEN DASHBOARD
+===================================================== */
+
+function openDashboard(){
+
+const badge=
+document.getElementById("roleBadge");
+
+if(currentUser.role==="super"){
+
+badge.innerText="🔴 SUPER ADMIN";
+badge.className="role-badge super";
+
+}
+else{
+
+badge.innerText="🟠 SUB ADMIN";
+badge.className="role-badge manager";
+
+}
+
+buildDashboard();
+
+openModal("dashboardModal");
+
+}
+
+
+/* =====================================================
+   DASHBOARD BUILDER
+===================================================== */
+
+function buildDashboard(){
+
+const box=
+document.getElementById("dashboardContent");
+
+if(currentUser.role==="super"){
+
+box.innerHTML=`
+
+<div class="info-item">
+
+<h4>🔴 Full Control</h4>
+
+<p>
+Aap website ki information aur financial data dono edit kar sakte hain.
+</p>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>🕋 Namaz Timings</h4>
+
+${buildNamazEditor()}
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>📢 Announcements</h4>
+
+<label>Notice Title</label>
+
+<input id="noticeTitle">
+
+<label>Notice Details</label>
+
+<textarea id="noticeText"></textarea>
+
+<button class="small-btn"
+onclick="addNotice()">
+Notice Add Karein
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>📅 Events</h4>
+
+<label>Event Title</label>
+
+<input id="eventTitle">
+
+<label>Event Details</label>
+
+<textarea id="eventText"></textarea>
+
+<button class="small-btn"
+onclick="addEvent()">
+Event Add Karein
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>📞 Contacts</h4>
+
+<label>Name</label>
+
+<input id="contactName">
+
+<label>Mobile</label>
+
+<input id="contactPhone">
+
+<button class="small-btn"
+onclick="addContact()">
+Contact Add Karein
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>💰 Financial Control</h4>
+
+<label>Total Income</label>
+
+<input id="editIncome" type="number"
+value="${getData().income}">
+
+<label>Total Expense</label>
+
+<input id="editExpense" type="number"
+value="${getData().expense}">
+
+<label>Balance</label>
+
+<input id="editBalance" type="number"
+value="${getData().balance}">
+
+<button class="small-btn"
+onclick="saveFinance()">
+Save Financial Data
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>🏦 Bank / UPI Details</h4>
+
+<label>UPI ID</label>
+
+<input id="editUPI"
+value="${getData().upi}">
+
+<label>Account Name</label>
+
+<input id="editBankName"
+value="${getData().bank.name}">
+
+<label>Account Number</label>
+
+<input id="editAccount"
+value="${getData().bank.account}">
+
+<label>IFSC</label>
+
+<input id="editIFSC"
+value="${getData().bank.ifsc}">
+
+<label>Bank Name</label>
+
+<input id="editBank"
+value="${getData().bank.bank}">
+
+<button class="small-btn"
+onclick="saveBank()">
+Save Bank Details
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>✍️ Complaints</h4>
+
+<div id="complaintsBox"></div>
+
+</div>
+
+
+<button class="logout-btn"
+onclick="logout()">
+Logout
+</button>
+
+`;
+
+}
+
+else{
+
+box.innerHTML=`
+
+<div class="info-item">
+
+<h4>🟠 Sub Admin Access</h4>
+
+<p>
+Aap normal website information edit kar sakte hain.
+Financial aur bank information locked hai.
+</p>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>🕋 Namaz Timings</h4>
+
+${buildNamazEditor()}
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>📢 Announcements</h4>
+
+<label>Notice Title</label>
+
+<input id="noticeTitle">
+
+<label>Notice Details</label>
+
+<textarea id="noticeText"></textarea>
+
+<button class="small-btn"
+onclick="addNotice()">
+Notice Add Karein
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>📅 Events</h4>
+
+<label>Event Title</label>
+
+<input id="eventTitle">
+
+<label>Event Details</label>
+
+<textarea id="eventText"></textarea>
+
+<button class="small-btn"
+onclick="addEvent()">
+Event Add Karein
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>📞 Contacts</h4>
+
+<label>Name</label>
+
+<input id="contactName">
+
+<label>Mobile</label>
+
+<input id="contactPhone">
+
+<button class="small-btn"
+onclick="addContact()">
+Contact Add Karein
+</button>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>💰 Financial Data</h4>
+
+<div class="warning">
+🔒 Locked for Sub Admin<br><br>
+Bank balance, income, expense aur bank account details sirf Super Admin change kar sakta hai.
+</div>
+
+</div>
+
+
+<div class="editor-box">
+
+<h4>✍️ Complaints</h4>
+
+<div id="complaintsBox"></div>
+
+</div>
+
+
+<button class="logout-btn"
+onclick="logout()">
+Logout
+</button>
+
+`;
+
+}
+
+buildComplaints();
+
+}
+
+
+/* =====================================================
+   NAMAZ EDITOR
+===================================================== */
+
+function buildNamazEditor(){
+
+const data=getData();
+
+return data.namaz.map((n,i)=>`
+
+<label>${n[0]}</label>
+
+<input
+id="namaz_${i}"
+value="${n[1]}"
+>
+
+`).join("")+
+
+`
+
+<button class="small-btn"
+onclick="saveNamaz()">
+Save Namaz Timings
+</button>
+
+`;
+
+}
+
+
+/* =====================================================
+   SAVE NAMAZ
+===================================================== */
+
+function saveNamaz(){
+
+const data=getData();
+
+data.namaz=data.namaz.map((n,i)=>{
+
+return[
+n[0],
+document.getElementById("namaz_"+i).value
+];
+
+});
+
+saveData(data);
+
+renderWebsite();
+
+alert("Namaz timings updated!");
+
+}
+
+
+/* =====================================================
+   ADD NOTICE
+===================================================== */
+
+function addNotice(){
+
+const title=
+document.getElementById("noticeTitle").value;
+
+const text=
+document.getElementById("noticeText").value;
+
+if(!title || !text){
+
+alert("Dono fields bharo.");
+
+return;
+
+}
+
+const data=getData();
+
+data.notices.unshift({
+title:title,
+text:text
+});
+
+saveData(data);
+
+renderWebsite();
+
+buildDashboard();
+
+alert("Notice added!");
+
+}
+
+
+/* =====================================================
+   ADD EVENT
+===================================================== */
+
+function addEvent(){
+
+const title=
+document.getElementById("eventTitle").value;
+
+const text=
+document.getElementById("eventText").value;
+
+if(!title || !text){
+
+alert("Dono fields bharo.");
+
+return;
+
+}
+
+const data=getData();
+
+data.events.unshift({
+title:title,
+text:text
+});
+
+saveData(data);
+
+renderWebsite();
+
+buildDashboard();
+
+alert("Event added!");
+
+}
+
+
+/* =====================================================
+   ADD CONTACT
+===================================================== */
+
+function addContact(){
+
+const name=
+document.getElementById("contactName").value;
+
+const phone=
+document.getElementById("contactPhone").value;
+
+if(!name || !phone){
+
+alert("Dono fields bharo.");
+
+return;
+
+}
+
+const data=getData();
+
+data.contacts.push([
+name,
+phone
+]);
+
+saveData(data);
+
+renderWebsite();
+
+buildDashboard();
+
+alert("Contact added!");
+
+}
+
+
+/* =====================================================
+   FINANCIAL SAVE
+   SUPER ADMIN ONLY
+===================================================== */
+
+function saveFinance(){
+
+if(currentUser.role!=="super"){
+
+alert("Access denied!");
+
+return;
+
+}
+
+const data=getData();
+
+data.income=
+Number(document.getElementById("editIncome").value);
+
+data.expense=
+Number(document.getElementById("editExpense").value);
+
+data.balance=
+Number(document.getElementById("editBalance").value);
+
+saveData(data);
+
+renderWebsite();
+
+alert("Financial data updated!");
+
+}
+
+
+/* =====================================================
+   BANK SAVE
+   SUPER ADMIN ONLY
+===================================================== */
+
+function saveBank(){
+
+if(currentUser.role!=="super"){
+
+alert("Access denied!");
+
+return;
+
+}
+
+const data=getData();
+
+data.upi=
+document.getElementById("editUPI").value;
+
+data.bank.name=
+document.getElementById("editBankName").value;
+
+data.bank.account=
+document.getElementById("editAccount").value;
+
+data.bank.ifsc=
+document.getElementById("editIFSC").value;
+
+data.bank.bank=
+document.getElementById("editBank").value;
+
+saveData(data);
+
+renderWebsite();
+
+alert("Bank details updated!");
+
+}
+
+
+/* =====================================================
+   COMPLAINTS
+===================================================== */
+
+function buildComplaints(){
+
+const box=
+document.getElementById("complaintsBox");
+
+if(!box) return;
+
+const list=
+JSON.parse(
+localStorage.getItem("masjidComplaints") || "[]"
+);
+
+if(list.length===0){
+
+box.innerHTML=
+"<p style='font-size:12px;color:#777;'>Abhi koi complaint nahi hai.</p>";
+
+return;
+
+}
+
+box.innerHTML=list.map(item=>`
+
+<div class="complaint-item">
+
+<button class="delete-btn"
+onclick="deleteComplaint(${item.id})">
+Delete
+</button>
+
+<h4>
+👤 ${escapeHTML(item.name)}
+</h4>
+
+<p>
+📱 ${escapeHTML(item.phone)}
+</p>
+
+<p>
+${escapeHTML(item.msg)}
+</p>
+
+<small>
+⏰ ${item.time}
+</small>
+
+</div>
+
+`).join("");
+
+}
+
 
 function deleteComplaint(id){
 
-    let list =
-        JSON.parse(
-            localStorage.getItem(
-                "masjidComplaints"
-            ) || "[]"
-        );
+if(currentUser.role!=="super"){
 
+alert("Complaint delete karne ka access sirf Super Admin ko hai.");
 
-    list =
-        list.filter(
-            item=>item.id!==id
-        );
+return;
 
+}
 
-    localStorage.setItem(
-        "masjidComplaints",
-        JSON.stringify(list)
-    );
+let list=
+JSON.parse(
+localStorage.getItem("masjidComplaints") || "[]"
+);
 
+list=list.filter(x=>x.id!==id);
 
-    loadComplaints();
+localStorage.setItem(
+"masjidComplaints",
+JSON.stringify(list)
+);
+
+buildComplaints();
 
 }
 
 
-/* =========================
-   LOGOUT
-========================= */
+function escapeHTML(str){
 
-function logoutAdmin(){
+return String(str)
 
-    currentUser=null;
+.replaceAll("&","&amp;")
 
-    closeModal(
-        "adminDashboardModal"
-    );
+.replaceAll("<","&lt;")
 
-    closeModal(
-        "editorModal"
-    );
+.replaceAll(">","&gt;")
 
-    document.getElementById(
-        "username"
-    ).value="";
+.replaceAll('"',"&quot;")
 
-    document.getElementById(
-        "password"
-    ).value="";
-
-    location.reload();
+.replaceAll("'","&#039;");
 
 }
 
 
-/* =========================
-   OUTSIDE CLICK
-========================= */
+/* =====================================================
+   MODAL CLICK OUTSIDE
+===================================================== */
 
 window.onclick=function(event){
 
-    if(
-        event.target.classList
-        .contains("modal-overlay")
-    ){
+if(
+event.target.classList.contains("modal-overlay")
+){
 
-        event.target.style.display="none";
+event.target.style.display="none";
 
-    }
+}
 
 };
 
 
-/* =========================
+/* =====================================================
    START
-========================= */
+===================================================== */
 
-loadData();
+renderWebsite();
 
 </script>
 
