@@ -1,0 +1,740 @@
+/* =========================================
+   GOSIYA MASJID - ADMIN PANEL SCRIPT
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const loginForm = document.getElementById("adminLoginForm");
+    const adminLogin = document.getElementById("adminLogin");
+    const adminDashboard = document.getElementById("adminDashboard");
+
+    /*
+       Demo login
+
+       Super Admin:
+       username: admin
+       password: admin123
+
+       Content Admin:
+       username: imam
+       password: imam123
+    */
+
+    if (loginForm) {
+
+        loginForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const username =
+                document.getElementById("adminUsername").value.trim();
+
+            const password =
+                document.getElementById("adminPassword").value;
+
+            const message =
+                document.getElementById("adminLoginMessage");
+
+            let role = "";
+
+            if (
+                username === "admin" &&
+                password === "admin123"
+            ) {
+                role = "superadmin";
+            }
+
+            else if (
+                username === "imam" &&
+                password === "imam123"
+            ) {
+                role = "contentadmin";
+            }
+
+            if (role !== "") {
+
+                localStorage.setItem(
+                    "gosiyaAdminLoggedIn",
+                    "true"
+                );
+
+                localStorage.setItem(
+                    "gosiyaAdminRole",
+                    role
+                );
+
+                showDashboard(role);
+
+            } else {
+
+                if (message) {
+                    message.textContent =
+                        "❌ Username या password गलत है।";
+                }
+
+            }
+
+        });
+
+    }
+
+
+    /* Check existing login */
+
+    const loggedIn =
+        localStorage.getItem(
+            "gosiyaAdminLoggedIn"
+        );
+
+    const savedRole =
+        localStorage.getItem(
+            "gosiyaAdminRole"
+        );
+
+    if (
+        loggedIn === "true" &&
+        savedRole
+    ) {
+
+        showDashboard(savedRole);
+
+    }
+
+});
+
+
+/* =========================================
+   SHOW DASHBOARD
+========================================= */
+
+function showDashboard(role) {
+
+    const login =
+        document.getElementById("adminLogin");
+
+    const dashboard =
+        document.getElementById("adminDashboard");
+
+    if (login) {
+        login.style.display = "none";
+    }
+
+    if (dashboard) {
+        dashboard.style.display = "flex";
+    }
+
+    updateAdminRole(role);
+
+    applyPermissions(role);
+
+    openSection("dashboard");
+}
+
+
+/* =========================================
+   UPDATE ADMIN NAME / ROLE
+========================================= */
+
+function updateAdminRole(role) {
+
+    const name =
+        document.getElementById("adminName");
+
+    const roleText =
+        document.getElementById("adminRole");
+
+    if (role === "superadmin") {
+
+        if (name) {
+            name.textContent = "Super Admin";
+        }
+
+        if (roleText) {
+            roleText.textContent =
+                "Full Administrator";
+        }
+
+    }
+
+    else if (role === "contentadmin") {
+
+        if (name) {
+            name.textContent = "Imam Admin";
+        }
+
+        if (roleText) {
+            roleText.textContent =
+                "Content Administrator";
+        }
+
+    }
+
+}
+
+
+/* =========================================
+   ROLE PERMISSIONS
+========================================= */
+
+function applyPermissions(role) {
+
+    const paymentMenu =
+        document.querySelector(
+            '[data-section="payments"]'
+        );
+
+    const settingsMenu =
+        document.querySelector(
+            '[data-section="settings"]'
+        );
+
+
+    /*
+       Super Admin:
+       Everything allowed
+    */
+
+    if (role === "superadmin") {
+
+        if (paymentMenu) {
+            paymentMenu.style.display = "flex";
+        }
+
+        if (settingsMenu) {
+            settingsMenu.style.display = "flex";
+        }
+
+        return;
+    }
+
+
+    /*
+       Content Admin:
+       Payment और Settings restricted
+    */
+
+    if (role === "contentadmin") {
+
+        if (paymentMenu) {
+            paymentMenu.style.display = "none";
+        }
+
+        if (settingsMenu) {
+            settingsMenu.style.display = "none";
+        }
+
+    }
+
+}
+
+
+/* =========================================
+   OPEN SECTION
+========================================= */
+
+function openSection(sectionId) {
+
+    const sections =
+        document.querySelectorAll(
+            ".admin-section"
+        );
+
+    const menuItems =
+        document.querySelectorAll(
+            ".menu-item"
+        );
+
+
+    sections.forEach(function (section) {
+
+        section.classList.remove("active");
+
+    });
+
+
+    menuItems.forEach(function (item) {
+
+        item.classList.remove("active");
+
+    });
+
+
+    const section =
+        document.getElementById(sectionId);
+
+    const menu =
+        document.querySelector(
+            `[data-section="${sectionId}"]`
+        );
+
+
+    if (section) {
+        section.classList.add("active");
+    }
+
+    if (menu) {
+        menu.classList.add("active");
+    }
+
+
+    updatePageTitle(sectionId);
+
+    closeSidebar();
+}
+
+
+/* =========================================
+   MENU BUTTONS
+========================================= */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        const menu =
+            event.target.closest(
+                ".menu-item"
+            );
+
+        if (!menu) {
+            return;
+        }
+
+        const section =
+            menu.getAttribute(
+                "data-section"
+            );
+
+        if (section) {
+            openSection(section);
+        }
+
+    }
+);
+
+
+/* =========================================
+   PAGE TITLES
+========================================= */
+
+function updatePageTitle(sectionId) {
+
+    const pageTitle =
+        document.getElementById(
+            "pageTitle"
+        );
+
+    if (!pageTitle) {
+        return;
+    }
+
+    const titles = {
+
+        dashboard: "Dashboard",
+
+        namaz: "Namaz Timings",
+
+        events: "Events",
+
+        notices: "Notices",
+
+        gallery: "Gallery",
+
+        payments: "Payments",
+
+        contacts: "Contacts",
+
+        settings: "Settings"
+
+    };
+
+    pageTitle.textContent =
+        titles[sectionId] ||
+        "Dashboard";
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+function toggleSidebar() {
+
+    const sidebar =
+        document.querySelector(
+            ".sidebar"
+        );
+
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.classList.toggle("open");
+}
+
+
+function closeSidebar() {
+
+    const sidebar =
+        document.querySelector(
+            ".sidebar"
+        );
+
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.classList.remove("open");
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+function adminLogout() {
+
+    localStorage.removeItem(
+        "gosiyaAdminLoggedIn"
+    );
+
+    localStorage.removeItem(
+        "gosiyaAdminRole"
+    );
+
+    window.location.href =
+        "index.html";
+}
+
+
+/* =========================================
+   EVENT FORM
+========================================= */
+
+function showEventForm() {
+
+    const form =
+        document.getElementById(
+            "eventForm"
+        );
+
+    if (form) {
+        form.classList.remove("hidden");
+    }
+
+}
+
+
+function hideEventForm() {
+
+    const form =
+        document.getElementById(
+            "eventForm"
+        );
+
+    if (form) {
+        form.classList.add("hidden");
+    }
+
+}
+
+
+function addEvent() {
+
+    const name =
+        document.getElementById(
+            "eventName"
+        ).value.trim();
+
+    const date =
+        document.getElementById(
+            "eventDate"
+        ).value;
+
+    const time =
+        document.getElementById(
+            "eventTime"
+        ).value;
+
+    const description =
+        document.getElementById(
+            "eventDescription"
+        ).value.trim();
+
+
+    if (!name || !date) {
+
+        alert(
+            "कृपया Event Name और Date भरें।"
+        );
+
+        return;
+    }
+
+
+    /*
+       अभी demo message है।
+
+       बाद में यही data database
+       में save होगा।
+    */
+
+    alert(
+        "✅ Event successfully added!"
+    );
+
+    hideEventForm();
+
+}
+
+
+/* =========================================
+   NOTICE FORM
+========================================= */
+
+function showNoticeForm() {
+
+    const form =
+        document.getElementById(
+            "noticeForm"
+        );
+
+    if (form) {
+        form.classList.remove("hidden");
+    }
+
+}
+
+
+function hideNoticeForm() {
+
+    const form =
+        document.getElementById(
+            "noticeForm"
+        );
+
+    if (form) {
+        form.classList.add("hidden");
+    }
+
+}
+
+
+function addNotice() {
+
+    const title =
+        document.getElementById(
+            "noticeTitle"
+        ).value.trim();
+
+    const description =
+        document.getElementById(
+            "noticeDescription"
+        ).value.trim();
+
+
+    if (!title || !description) {
+
+        alert(
+            "कृपया Notice की पूरी जानकारी भरें।"
+        );
+
+        return;
+    }
+
+
+    alert(
+        "✅ Notice successfully added!"
+    );
+
+    hideNoticeForm();
+
+}
+
+
+/* =========================================
+   GALLERY FORM
+========================================= */
+
+function showGalleryForm() {
+
+    const form =
+        document.getElementById(
+            "galleryForm"
+        );
+
+    if (form) {
+        form.classList.remove("hidden");
+    }
+
+}
+
+
+function hideGalleryForm() {
+
+    const form =
+        document.getElementById(
+            "galleryForm"
+        );
+
+    if (form) {
+        form.classList.add("hidden");
+    }
+
+}
+
+
+function addPhoto() {
+
+    const url =
+        document.getElementById(
+            "photoUrl"
+        ).value.trim();
+
+    const title =
+        document.getElementById(
+            "photoTitle"
+        ).value.trim();
+
+
+    if (!url) {
+
+        alert(
+            "कृपया Photo URL डालें।"
+        );
+
+        return;
+    }
+
+
+    alert(
+        "✅ Photo successfully added!"
+    );
+
+    hideGalleryForm();
+
+}
+
+
+/* =========================================
+   NAMAZ SAVE
+========================================= */
+
+function saveNamaz() {
+
+    const fajr =
+        document.getElementById(
+            "fajrTime"
+        ).value;
+
+    const zuhr =
+        document.getElementById(
+            "zuhrTime"
+        ).value;
+
+    const asr =
+        document.getElementById(
+            "asrTime"
+        ).value;
+
+    const maghrib =
+        document.getElementById(
+            "maghribTime"
+        ).value;
+
+    const isha =
+        document.getElementById(
+            "ishaTime"
+        ).value;
+
+
+    /*
+       Demo storage.
+
+       बाद में database से connect करेंगे।
+    */
+
+    localStorage.setItem(
+        "namazTimings",
+        JSON.stringify({
+            fajr,
+            zuhr,
+            asr,
+            maghrib,
+            isha
+        })
+    );
+
+
+    const message =
+        document.getElementById(
+            "namazMessage"
+        );
+
+    if (message) {
+
+        message.textContent =
+            "✅ Namaz timings saved successfully.";
+
+    }
+
+}
+
+
+/* =========================================
+   PAYMENT SAVE
+========================================= */
+
+function savePayments() {
+
+    const role =
+        localStorage.getItem(
+            "gosiyaAdminRole"
+        );
+
+
+    /*
+       Security check
+    */
+
+    if (role !== "superadmin") {
+
+        alert(
+            "🔒 आपको Payment Settings का access नहीं है।"
+        );
+
+        return;
+    }
+
+
+    const upi =
+        document.getElementById(
+            "upiId"
+        ).value.trim();
+
+    const account =
+        document.getElementById(
+            "accountName"
+        ).value.trim();
+
+    const info =
+        document.getElementById(
+            "paymentInfo"
+        ).value.trim();
+
+
+    localStorage.setItem(
+        "paymentSettings",
+        JSON.stringify({
+            upi,
+            account,
+            info
+        })
+    );
+
+
+    alert(
+        "✅ Payment settings saved."
+    );
+
+}
