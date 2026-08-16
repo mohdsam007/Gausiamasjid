@@ -3,354 +3,563 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Gosiya Masjid</title>
-
     <meta name="description" content="Gosiya Masjid Official Website">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* WELCOME / ENTRY SCREEN */
+        .welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0b3c28, #1b6845);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .welcome-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .masjid-logo {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-box h1 {
+            color: #0b3c28;
+            margin-bottom: 5px;
+        }
+
+        .welcome-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .choose-text {
+            margin: 15px 0 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .account-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .account-card {
+            border: 2px solid #e0e0e0;
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s;
+        }
+
+        .account-card:hover {
+            border-color: #0b3c28;
+            background: #eef6f2;
+        }
+
+        .account-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .account-card h2 {
+            font-size: 16px;
+            color: #0b3c28;
+        }
+
+        .account-card p {
+            font-size: 12px;
+            color: #666;
+            margin: 4px 0 8px;
+        }
+
+        .account-card span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0b3c28;
+        }
+
+        /* LOGIN POPUP */
+        .login-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+            z-index: 1100;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 14px;
+            max-width: 360px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .login-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .login-box label {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .login-box input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .login-button {
+            padding: 12px;
+            background: #0b3c28;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-message {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        /* WEBSITE CONTAINER */
+        .website-container {
+            display: none;
+        }
+
+        /* HEADER */
+        .main-header {
+            background: #0b3c28;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 26px;
+        }
+
+        .main-nav {
+            display: none;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            display: none;
+            background: #082d1e;
+            padding: 15px 20px;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 1px solid #144933;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: linear-gradient(135deg, #0b3c28, #1b6845);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .welcome-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .hero-section h1 {
+            margin: 15px 0 10px;
+            font-size: 28px;
+        }
+
+        .hero-section p {
+            max-width: 500px;
+            margin: 0 auto 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .primary-button, .secondary-button {
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .primary-button {
+            background: #ffd700;
+            color: #000;
+        }
+
+        .secondary-button {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        /* QUICK ACCESS & SECTIONS */
+        .quick-section, .content-section {
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-heading span {
+            color: #0b3c28;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-size: 22px;
+            color: #111;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+        }
+
+        .quick-card {
+            background: #fff;
+            padding: 20px 15px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .quick-card div {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .quick-card h3 {
+            font-size: 15px;
+            color: #0b3c28;
+            margin-bottom: 4px;
+        }
+
+        .quick-card p {
+            font-size: 11px;
+            color: #777;
+        }
+
+        /* TABLE FOR NAMAZ */
+        .namaz-table {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            border-collapse: collapse;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .namaz-table th, .namaz-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .namaz-table th {
+            background: #0b3c28;
+            color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .main-nav { display: flex; }
+            .menu-button { display: none; }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- =========================
-         START / WELCOME SCREEN
-    ========================== -->
-
+    <!-- WELCOME SCREEN -->
     <div id="welcomeScreen" class="welcome-screen">
-
         <div class="welcome-box">
-
-            <div class="masjid-logo">
-                🕌
-            </div>
-
+            <div class="masjid-logo">🕌</div>
             <h1>Gosiya Masjid</h1>
-
-            <p class="welcome-text">
-                Welcome to Gosiya Masjid
-            </p>
-
-            <p class="choose-text">
-                Please select how you want to continue
-            </p>
-
+            <p class="welcome-text">Welcome to Gosiya Masjid Portal</p>
+            <p class="choose-text">Please select how you want to continue</p>
             <div class="account-options">
-
-                <!-- Guest -->
-                <button class="account-card"
-                        onclick="enterGuest()">
-
-                    <div class="account-icon">
-                        👤
-                    </div>
-
+                <button class="account-card" onclick="enterGuest()">
+                    <div class="account-icon">👤</div>
                     <h2>Guest Account</h2>
-
-                    <p>
-                        Website की सारी public information देखें
-                    </p>
-
-                    <span>
-                        Continue as Guest →
-                    </span>
-
+                    <p>Website ki saari public info dekhein</p>
+                    <span>Continue as Guest →</span>
                 </button>
-
-
-                <!-- Admin -->
-                <button class="account-card admin-card"
-                        onclick="openAdminLogin()">
-
-                    <div class="account-icon">
-                        🔐
-                    </div>
-
+                <button class="account-card" onclick="openAdminLogin()">
+                    <div class="account-icon">🔐</div>
                     <h2>Admin Login</h2>
-
-                    <p>
-                        Website को manage और update करें
-                    </p>
-
-                    <span>
-                        Admin Login →
-                    </span>
-
+                    <p>Website ko manage aur update karein</p>
+                    <span>Admin Login →</span>
                 </button>
-
             </div>
-
         </div>
-
     </div>
 
-
-    <!-- =========================
-         ADMIN LOGIN POPUP
-    ========================== -->
-
+    <!-- ADMIN LOGIN POPUP -->
     <div id="adminLoginBox" class="login-overlay">
-
         <div class="login-box">
-
-            <button class="close-btn"
-                    onclick="closeAdminLogin()">
-                ×
-            </button>
-
-            <div class="login-icon">
-                🔐
-            </div>
-
+            <button class="close-btn" onclick="closeAdminLogin()">×</button>
+            <div class="account-icon">🔐</div>
             <h2>Admin Login</h2>
-
-            <p>
-                Authorized administrators only
-            </p>
-
+            <p style="font-size:12px; color:#666;">Authorized administrators only</p>
             <form onsubmit="adminLogin(event)">
-
-                <label for="username">
-                    Username
-                </label>
-
-                <input
-                    type="text"
-                    id="username"
-                    placeholder="Enter username"
-                    required
-                >
-
-
-                <label for="password">
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter password"
-                    required
-                >
-
-                <button type="submit"
-                        class="login-button">
-                    Login
-                </button>
-
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="admin" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+                <button type="submit" class="login-button">Login</button>
             </form>
-
-            <p id="loginMessage"
-               class="login-message">
-            </p>
-
+            <p id="loginMessage" class="login-message"></p>
         </div>
-
     </div>
 
-
-    <!-- =========================
-         PUBLIC WEBSITE
-    ========================== -->
-
+    <!-- PUBLIC WEBSITE -->
     <div id="publicWebsite" class="website-container">
-
-
-        <!-- HEADER -->
-
         <header class="main-header">
-
             <div class="logo-area">
-
-                <div class="logo-icon">
-                    🕌
-                </div>
-
+                <div class="logo-icon">🕌</div>
                 <div>
-                    <h2>Gosiya Masjid</h2>
-                    <small>Welcome</small>
+                    <h2 style="font-size:18px;">Gosiya Masjid</h2>
+                    <small style="opacity:0.8;">Yusufpur Chaksaberi</small>
                 </div>
-
             </div>
-
-
-            <!-- Desktop Menu -->
-
             <nav class="main-nav">
-
                 <a href="#home">Home</a>
-
-                <a href="#namaz">
-                    Namaz Timings
-                </a>
-
-                <a href="#events">
-                    Events
-                </a>
-
-                <a href="#notices">
-                    Notices
-                </a>
-
-                <a href="#gallery">
-                    Gallery
-                </a>
-
-                <a href="#payments">
-                    Payments
-                </a>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
+                <a href="#namaz">Namaz Timings</a>
+                <a href="#events">Events</a>
+                <a href="#notices">Notices</a>
+                <a href="#contact">Contact</a>
             </nav>
-
-
-            <button class="menu-button"
-                    onclick="toggleMenu()">
-                ☰
-            </button>
-
+            <button class="menu-button" onclick="toggleMenu()">☰</button>
         </header>
 
-
-        <!-- MOBILE MENU -->
-
-        <div id="mobileMenu"
-             class="mobile-menu">
-
-            <a href="#home"
-               onclick="closeMobileMenu()">
-                Home
-            </a>
-
-            <a href="#namaz"
-               onclick="closeMobileMenu()">
-                Namaz Timings
-            </a>
-
-            <a href="#events"
-               onclick="closeMobileMenu()">
-                Events
-            </a>
-
-            <a href="#notices"
-               onclick="closeMobileMenu()">
-                Notices
-            </a>
-
-            <a href="#gallery"
-               onclick="closeMobileMenu()">
-                Gallery
-            </a>
-
-            <a href="#payments"
-               onclick="closeMobileMenu()">
-                Payments
-            </a>
-
-            <a href="#contact"
-               onclick="closeMobileMenu()">
-                Contact
-            </a>
-
+        <div id="mobileMenu" class="mobile-menu">
+            <a href="#home" onclick="closeMobileMenu()">Home</a>
+            <a href="#namaz" onclick="closeMobileMenu()">Namaz Timings</a>
+            <a href="#events" onclick="closeMobileMenu()">Events</a>
+            <a href="#notices" onclick="closeMobileMenu()">Notices</a>
+            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
         </div>
 
-
-        <!-- =========================
-             HOME
-        ========================== -->
-
-        <section id="home"
-                 class="hero-section">
-
-            <div class="hero-content">
-
-                <span class="welcome-badge">
-                    🕌 Assalamu Alaikum
-                </span>
-
-                <h1>
-                    Welcome to
-                    <br>
-                    <strong>Gosiya Masjid</strong>
-                </h1>
-
-                <p>
-                    Masjid ki important information,
-                    Namaz timings, events, notices
-                    aur announcements ek hi jagah.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#namaz"
-                       class="primary-button">
-                        View Namaz Timings
-                    </a>
-
-                    <a href="#notices"
-                       class="secondary-button">
-                        View Notices
-                    </a>
-
-                </div>
-
+        <section id="home" class="hero-section">
+            <span class="welcome-badge">🕌 Assalamu Alaikum</span>
+            <h1>Welcome to<br><strong>Gosiya Masjid</strong></h1>
+            <p>Masjid ki zaroori information, Namaz timings, events aur notices ek hi jagah.</p>
+            <div class="hero-buttons">
+                <a href="#namaz" class="primary-button">Namaz Timings</a>
+                <a href="#notices" class="secondary-button">Notices</a>
             </div>
-
         </section>
 
-
-        <!-- =========================
-             QUICK MENU
-        ========================== -->
-
+        <!-- QUICK ACCESS -->
         <section class="quick-section">
-
             <div class="section-heading">
-
-                <span>
-                    Quick Access
-                </span>
-
-                <h2>
-                    Explore Masjid Information
-                </h2>
-
+                <span>Quick Access</span>
+                <h2>Masjid Menu</h2>
             </div>
-
-
             <div class="quick-grid">
-
-                <a href="#namaz"
-                   class="quick-card">
-
+                <a href="#namaz" class="quick-card">
                     <div>🕋</div>
-
-                    <h3>Namaz Timings</h3>
-
-                    <p>
-                        आज की नमाज़ के समय
-                    </p>
-
+                    <h3>Namaz</h3>
+                    <p>Auqaat-e-Namaz</p>
                 </a>
-
-
-                <a href="#events"
-                   class="quick-card">
-
+                <a href="#events" class="quick-card">
                     <div>📅</div>
-
                     <h3>Events</h3>
-
-                    <p>
-                        Masjid के upcoming events
-                    </p>
-
+                    <p>Upcoming Events</p>
                 </a>
+                <a href="#notices" class="quick-card">
+                    <div>📢</div>
+                    <h3>Notices</h3>
+                    <p>Zaroori Ittila</p>
+                </a>
+                <a href="#contact" class="quick-card">
+                    <div>📞</div>
+                    <h3>Contact</h3>
+                    <p>Rabta Karein</p>
+                </a>
+            </div>
+        </section>
 
+        <!-- NAMAZ TIMING SECTION -->
+        <section id="namaz" class="content-section">
+            <div class="section-heading">
+                <span>Daily Schedule</span>
+                <h2>Namaz Timings</h2>
+            </div>
+            <table class="namaz-table">
+                <thead>
+                    <tr>
+                        <th>Namaz</th>
+                        <th>Azan</th>
+                        <th>Jamat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Fajr</td><td>05:00 AM</td><td>05:30 AM</td></tr>
+                    <tr><td>Zuhr</td><td>01:00 PM</td><td>01:30 PM</td></tr>
+                    <tr><td>Asr</td><td>05:00 PM</td><td>05:15 PM</td></tr>
+                    <tr><td>Maghrib</td><td>Sunset</td><td>10 Mins After</td></tr>
+                    <tr><td>Isha</td><td>08:15 PM</td><td>08:30 PM</td></tr>
+                    <tr><td>Juma</td><td>12:45 PM</td><td>01:30 PM</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
 
-                <a href="#notices"
-                  
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function enterGuest() {
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('publicWebsite').style.display = 'block';
+        }
+
+        function openAdminLogin() {
+            document.getElementById('adminLoginBox').style.display = 'flex';
+        }
+
+        function closeAdminLogin() {
+            document.getElementById('adminLoginBox').style.display = 'none';
+        }
+
+        function adminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('username').value;
+            const p = document.getElementById('password').value;
+            const msg = document.getElementById('loginMessage');
+
+            if (u === 'admin' && p === 'admin123') {
+                msg.style.color = 'green';
+                msg.innerText = 'Login successful!';
+                setTimeout(() => {
+                    closeAdminLogin();
+                    enterGuest();
+                }, 1000);
+            } else {
+                msg.style.color = 'red';
+                msg.innerText = 'Galat username ya password!';
+            }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
