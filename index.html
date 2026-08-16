@@ -17,9 +17,10 @@
         body {
             background-color: #f4f7f6;
             color: #333;
+            min-height: 100vh;
         }
 
-        /* WELCOME / ENTRY SCREEN */
+        /* WELCOME SCREEN */
         .welcome-screen {
             position: fixed;
             top: 0;
@@ -36,49 +37,51 @@
 
         .welcome-box {
             background: #fff;
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
-            max-width: 400px;
+            max-width: 380px;
             width: 100%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
 
         .masjid-logo {
-            font-size: 50px;
-            margin-bottom: 10px;
+            font-size: 45px;
+            margin-bottom: 8px;
         }
 
         .welcome-box h1 {
             color: #0b3c28;
-            margin-bottom: 5px;
+            font-size: 22px;
+            margin-bottom: 4px;
         }
 
         .welcome-text {
             color: #666;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .choose-text {
-            margin: 15px 0 20px;
+            margin: 15px 0;
             font-weight: 600;
             color: #333;
+            font-size: 14px;
         }
 
         .account-options {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .account-card {
             border: 2px solid #e0e0e0;
             background: #fafafa;
-            padding: 15px;
+            padding: 14px;
             border-radius: 12px;
             cursor: pointer;
             text-align: left;
-            transition: all 0.3s;
+            transition: all 0.25s;
         }
 
         .account-card:hover {
@@ -87,107 +90,86 @@
         }
 
         .account-icon {
-            font-size: 24px;
-            margin-bottom: 5px;
+            font-size: 22px;
+            margin-bottom: 4px;
         }
 
         .account-card h2 {
-            font-size: 16px;
+            font-size: 15px;
             color: #0b3c28;
         }
 
         .account-card p {
             font-size: 12px;
             color: #666;
-            margin: 4px 0 8px;
+            margin: 2px 0 6px;
         }
 
         .account-card span {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: #0b3c28;
         }
 
-        /* LOGIN POPUP */
-        .login-overlay {
+        /* POPUP OVERLAYS */
+        .modal-overlay {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.65);
             align-items: center;
             justify-content: center;
-            z-index: 1100;
+            z-index: 1200;
             padding: 20px;
         }
 
-        .login-box {
+        .modal-box {
             background: #fff;
-            padding: 25px;
-            border-radius: 14px;
-            max-width: 360px;
+            padding: 25px 20px;
+            border-radius: 16px;
+            max-width: 440px;
             width: 100%;
             position: relative;
-            text-align: center;
+            animation: popIn 0.25s ease-out;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         .close-btn {
             position: absolute;
-            top: 10px;
+            top: 12px;
             right: 15px;
-            background: none;
+            background: #eef2f0;
             border: none;
-            font-size: 24px;
+            font-size: 18px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
             cursor: pointer;
-        }
-
-        .login-box form {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            text-align: left;
-            margin-top: 15px;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
         }
 
-        .login-box label {
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .login-box input {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-
-        .login-button {
-            padding: 12px;
-            background: #0b3c28;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .login-message {
-            font-size: 12px;
-            margin-top: 10px;
-        }
-
-        /* WEBSITE CONTAINER */
+        /* MAIN APP SHELL */
         .website-container {
             display: none;
         }
 
-        /* HEADER */
         .main-header {
             background: #0b3c28;
             color: #fff;
-            padding: 15px 20px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -206,218 +188,351 @@
             font-size: 26px;
         }
 
-        .main-nav {
-            display: none;
-            gap: 20px;
-        }
-
-        .main-nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .menu-button {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* MOBILE MENU */
-        .mobile-menu {
-            display: none;
-            background: #082d1e;
-            padding: 15px 20px;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .mobile-menu a {
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 0;
-            border-bottom: 1px solid #144933;
-        }
-
-        /* HERO SECTION */
-        .hero-section {
+        .hero-banner {
             background: linear-gradient(135deg, #0b3c28, #1b6845);
             color: #fff;
             text-align: center;
-            padding: 50px 20px;
+            padding: 30px 20px;
         }
 
         .welcome-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 6px 14px;
+            background: rgba(255,255,255,0.18);
+            padding: 5px 12px;
             border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .hero-banner h1 {
+            font-size: 22px;
+            margin: 10px 0 4px;
+        }
+
+        .hero-banner p {
             font-size: 13px;
+            opacity: 0.85;
         }
 
-        .hero-section h1 {
-            margin: 15px 0 10px;
-            font-size: 28px;
-        }
-
-        .hero-section p {
-            max-width: 500px;
-            margin: 0 auto 20px;
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .primary-button, .secondary-button, .location-button {
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            display: inline-block;
-        }
-
-        .primary-button {
-            background: #ffd700;
-            color: #000;
-        }
-
-        .secondary-button {
-            background: rgba(255,255,255,0.2);
-            color: #fff;
-        }
-
-        .location-button {
-            background: #ffffff;
-            color: #0b3c28;
-        }
-
-        /* SECTIONS */
-        .quick-section, .content-section {
-            padding: 30px 20px;
-            max-width: 800px;
+        /* GRID MENU */
+        .menu-section {
+            padding: 25px 15px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .section-heading {
+        .section-title {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        .section-heading span {
+        .section-title span {
             color: #0b3c28;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
         }
 
-        .section-heading h2 {
-            font-size: 22px;
+        .section-title h2 {
+            font-size: 20px;
             color: #111;
         }
 
-        .quick-grid {
+        .app-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
         }
 
-        .quick-card {
+        .app-card {
             background: #fff;
-            padding: 20px 15px;
-            border-radius: 12px;
+            padding: 20px 12px;
+            border-radius: 14px;
             text-align: center;
             text-decoration: none;
             color: #333;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            border: 1px solid #edf1f0;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .quick-card:hover {
-            transform: translateY(-4px);
+        .app-card:active {
+            transform: scale(0.97);
         }
 
-        .quick-card div {
+        .app-card div {
             font-size: 30px;
             margin-bottom: 8px;
         }
 
-        .quick-card h3 {
-            font-size: 15px;
+        .app-card h3 {
+            font-size: 14px;
             color: #0b3c28;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
-        .quick-card p {
+        .app-card p {
             font-size: 11px;
             color: #777;
         }
 
-        /* NAMAZ TABLE */
-        .namaz-table {
+        /* TABLES */
+        .custom-table {
             width: 100%;
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
             border-collapse: collapse;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        .namaz-table th, .namaz-table td {
-            padding: 14px 16px;
+        .custom-table th, .custom-table td {
+            padding: 12px 14px;
             text-align: left;
+            font-size: 13px;
             border-bottom: 1px solid #eee;
         }
 
-        .namaz-table th {
+        .custom-table th {
             background: #0b3c28;
             color: #fff;
         }
 
-        /* CONTACT CARDS */
-        .contact-grid {
+        /* CARDS INSIDE POPUP */
+        .item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #f8faf9;
+            border: 1px solid #e2e8e5;
+            border-left: 4px solid #0b3c28;
+            padding: 12px 14px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .info-item h4 {
+            font-size: 14px;
+            color: #0b3c28;
+            margin-bottom: 4px;
+        }
+
+        .info-item p {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .info-item small {
+            display: block;
+            margin-top: 6px;
+            color: #888;
+            font-size: 10px;
+        }
+
+        /* HISAB STATS GRID */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        .contact-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        .stat-card {
+            padding: 12px;
+            border-radius: 10px;
             text-align: center;
-            border-top: 4px solid #0b3c28;
         }
 
-        .contact-card h3 {
+        .stat-card h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .stat-card p {
             font-size: 16px;
-            color: #0b3c28;
-            margin-bottom: 6px;
+            font-weight: bold;
         }
 
-        .contact-card a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #0b3c28;
-            text-decoration: none;
-            font-weight: 600;
+        .stat-income {
+            background: #e8f7ee;
+            color: #0b8043;
+            border: 1px solid #c2e8d0;
+        }
+
+        .stat-expense {
+            background: #fdf2f2;
+            color: #d93025;
+            border: 1px solid #f9cccc;
+        }
+
+        .stat-balance {
+            grid-column: span 2;
             background: #eef6f2;
-            padding: 8px 14px;
+            color: #0b3c28;
+            border: 1px solid #badcc9;
+        }
+
+        /* DONATION BOX */
+        .donation-box {
+            text-align: center;
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .upi-badge {
+            background: #eef6f2;
+            color: #0b3c28;
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 13px;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: #0b3c28;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
             border-radius: 6px;
+            font-size: 11px;
+            cursor: pointer;
+            margin-left: 6px;
+        }
+
+        .bank-details {
+            text-align: left;
+            font-size: 12px;
+            background: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 12px;
+            border: 1px dashed #bbb;
+            line-height: 1.6;
+        }
+
+        /* CONTACT LIST */
+        .contact-item {
+            background: #f8faf9;
+            border: 1px solid #e2e8e5;
+            padding: 12px 14px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-item div h4 {
+            font-size: 14px;
+            color: #0b3c28;
+        }
+
+        .contact-item div p {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .call-btn {
+            background: #0b3c28;
+            color: #fff;
+            text-decoration: none;
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* FORMS */
+        .modal-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .modal-box label {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .modal-box input, .modal-box textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
             font-size: 13px;
         }
 
-        @media (min-width: 768px) {
-            .main-nav { display: flex; }
-            .menu-button { display: none; }
+        .modal-box textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-button {
+            padding: 12px;
+            background: #0b3c28;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        /* COMPLAINT INBOX ITEM (ADMIN) */
+        .complaint-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-left: 4px solid #d93025;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-align: left;
+            position: relative;
+        }
+
+        .complaint-item h4 {
+            font-size: 13px;
+            color: #111;
+        }
+
+        .complaint-item p {
+            font-size: 12px;
+            color: #444;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        .complaint-item small {
+            color: #777;
+            font-size: 11px;
+            display: block;
+            margin-top: 6px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffebeb;
+            color: #d93025;
+            border: 1px solid #f5c2c2;
+            padding: 2px 6px;
+            font-size: 10px;
+            border-radius: 4px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -428,117 +543,130 @@
         <div class="welcome-box">
             <div class="masjid-logo">🕌</div>
             <h1>Gosiya Masjid</h1>
-            <p class="welcome-text">Welcome to Gosiya Masjid Portal</p>
+            <p class="welcome-text">Yusufpur Chaksaberi</p>
             <p class="choose-text">Please select how you want to continue</p>
             <div class="account-options">
                 <button class="account-card" onclick="enterGuest()">
                     <div class="account-icon">👤</div>
                     <h2>Guest Account</h2>
-                    <p>Website ki saari public info dekhein</p>
+                    <p>Website ki saari details dekhein</p>
                     <span>Continue as Guest →</span>
                 </button>
-                <button class="account-card" onclick="openAdminLogin()">
+                <button class="account-card" onclick="openModal('adminModal')">
                     <div class="account-icon">🔐</div>
                     <h2>Admin Login</h2>
-                    <p>Website ko manage aur update karein</p>
+                    <p>Website update & complaints check karein</p>
                     <span>Admin Login →</span>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- ADMIN LOGIN POPUP -->
-    <div id="adminLoginBox" class="login-overlay">
-        <div class="login-box">
-            <button class="close-btn" onclick="closeAdminLogin()">×</button>
-            <div class="account-icon">🔐</div>
-            <h2>Admin Login</h2>
-            <p style="font-size:12px; color:#666;">Authorized administrators only</p>
-            <form onsubmit="adminLogin(event)">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="admin" required>
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="••••••••" required>
-                <button type="submit" class="login-button">Login</button>
-            </form>
-            <p id="loginMessage" class="login-message"></p>
-        </div>
-    </div>
-
-    <!-- PUBLIC WEBSITE -->
+    <!-- MAIN APP SCREEN -->
     <div id="publicWebsite" class="website-container">
         <header class="main-header">
             <div class="logo-area">
                 <div class="logo-icon">🕌</div>
                 <div>
-                    <h2 style="font-size:18px;">Gosiya Masjid</h2>
-                    <small style="opacity:0.8;">Yusufpur Chaksaberi</small>
+                    <h2 style="font-size:17px;">Gosiya Masjid</h2>
+                    <small style="opacity:0.8; font-size:11px;">Yusufpur Chaksaberi</small>
                 </div>
             </div>
-            <nav class="main-nav">
-                <a href="#home">Home</a>
-                <a href="#namaz">Namaz Timings</a>
-                <a href="#location">Location</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <button class="menu-button" onclick="toggleMenu()">☰</button>
+            <button onclick="location.reload()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer;">🔄</button>
         </header>
 
-        <div id="mobileMenu" class="mobile-menu">
-            <a href="#home" onclick="closeMobileMenu()">Home</a>
-            <a href="#namaz" onclick="closeMobileMenu()">Namaz Timings</a>
-            <a href="#location" onclick="closeMobileMenu()">Location</a>
-            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+        <div class="hero-banner">
+            <span class="welcome-badge">🕌 Assalamu Alaikum</span>
+            <h1>Welcome to Portal</h1>
+            <p>Neeche diye gaye kisi bhi option par tap karein</p>
         </div>
 
-        <!-- HERO SECTION -->
-        <section id="home" class="hero-section">
-            <span class="welcome-badge">🕌 Assalamu Alaikum</span>
-            <h1>Welcome to<br><strong>Gosiya Masjid</strong></h1>
-            <p>Masjid ki zaroori information, Namaz timings, location aur contact details ek hi jagah.</p>
-            <div class="hero-buttons">
-                <a href="#namaz" class="primary-button">Namaz Timings</a>
-                <a href="https://maps.app.goo.gl/rRJxzmta6CRW4sUPA?g_st=ic" target="_blank" class="location-button">📍 Masjid Location</a>
-                <a href="#contact" class="secondary-button">Contact Us</a>
-            </div>
-        </section>
-
-        <!-- QUICK ACCESS -->
-        <section class="quick-section">
-            <div class="section-heading">
+        <section class="menu-section">
+            <div class="section-title">
                 <span>Quick Access</span>
                 <h2>Masjid Menu</h2>
             </div>
-            <div class="quick-grid">
-                <a href="#namaz" class="quick-card">
+            <div class="app-grid">
+                <!-- Namaz Card -->
+                <div class="app-card" onclick="openModal('namazModal')">
                     <div>🕋</div>
                     <h3>Namaz</h3>
                     <p>Auqaat-e-Namaz</p>
-                </a>
-                <a href="https://maps.app.goo.gl/rRJxzmta6CRW4sUPA?g_st=ic" target="_blank" class="quick-card">
+                </div>
+
+                <!-- Chanda / Payments Card -->
+                <div class="app-card" onclick="openModal('donationModal')">
+                    <div>💰</div>
+                    <h3>Chanda / Donate</h3>
+                    <p>Online Payment</p>
+                </div>
+
+                <!-- Hisaab-Kitab Card -->
+                <div class="app-card" onclick="openModal('hisabModal')">
+                    <div>📊</div>
+                    <h3>Hisaab-Kitab</h3>
+                    <p>Aamad-o-Kharch</p>
+                </div>
+
+                <!-- Complaint / Suggestion Card -->
+                <div class="app-card" onclick="openModal('complaintModal')">
+                    <div>✍️</div>
+                    <h3>Shikayat / Mashwara</h3>
+                    <p>Register Complaint</p>
+                </div>
+
+                <!-- Announcements Card -->
+                <div class="app-card" onclick="openModal('noticesModal')">
+                    <div>📢</div>
+                    <h3>Announcements</h3>
+                    <p>Zaroori Ittila</p>
+                </div>
+
+                <!-- Events Card -->
+                <div class="app-card" onclick="openModal('eventsModal')">
+                    <div>📅</div>
+                    <h3>Events</h3>
+                    <p>Upcoming Programs</p>
+                </div>
+
+                <!-- Location Card -->
+                <a href="https://maps.app.goo.gl/rRJxzmta6CRW4sUPA?g_st=ic" target="_blank" class="app-card">
                     <div>📍</div>
                     <h3>Location</h3>
-                    <p>Google Maps Direction</p>
+                    <p>Google Maps</p>
                 </a>
-                <a href="#contact" class="quick-card">
+
+                <!-- Contact Card -->
+                <div class="app-card" onclick="openModal('contactModal')">
                     <div>📞</div>
                     <h3>Contact</h3>
                     <p>Rabta Karein</p>
-                </a>
+                </div>
+
+                <!-- Admin Card -->
+                <div class="app-card" onclick="openModal('adminModal')">
+                    <div>🔐</div>
+                    <h3>Admin Panel</h3>
+                    <p>Manage & Inbox</p>
+                </div>
             </div>
         </section>
+    </div>
 
-        <!-- NAMAZ TIMING SECTION -->
-        <section id="namaz" class="content-section">
-            <div class="section-heading">
-                <span>Daily Schedule</span>
-                <h2>Namaz Timings</h2>
+    <!-- NAMAZ MODAL -->
+    <div id="namazModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('namazModal')">✕</button>
+            <div style="text-align: center; margin-bottom: 10px;">
+                <span style="font-size: 30px;">🕋</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Namaz Timings</h3>
+                <small style="color: #666;">Jamat ke naye auqaat</small>
             </div>
-            <table class="namaz-table">
+            <table class="custom-table">
                 <thead>
                     <tr>
                         <th>Namaz</th>
-                        <th>Jamat Ka Waqt</th>
+                        <th>Jamat Time</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -550,63 +678,302 @@
                     <tr style="background:#eef6f2;"><td><strong>Juma</strong></td><td><strong>1:45 PM</strong></td></tr>
                 </tbody>
             </table>
-        </section>
-
-        <!-- LOCATION BUTTON SECTION -->
-        <section id="location" class="content-section" style="text-align: center;">
-            <div class="section-heading">
-                <span>Map Direction</span>
-                <h2>Masjid Location</h2>
-            </div>
-            <p style="margin-bottom: 15px; color: #666;">Google Maps par rasta dekhne ke liye neeche button par click karein:</p>
-            <a href="https://maps.app.goo.gl/rRJxzmta6CRW4sUPA?g_st=ic" target="_blank" class="primary-button" style="padding: 12px 24px; font-size: 15px;">
-                📍 Open in Google Maps
-            </a>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="content-section">
-            <div class="section-heading">
-                <span>Rabta Karein</span>
-                <h2>Contact Details</h2>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>Imam Sahab</h3>
-                    <p style="font-size: 13px; color: #666;">Masjid Imam</p>
-                    <a href="tel:7999465053">📞 +91 79994 65053</a>
-                </div>
-
-                <div class="contact-card">
-                    <h3>Khazanchi</h3>
-                    <p style="font-size: 13px; color: #666;">Treasurer</p>
-                    <a href="tel:+918851165979">📞 +91 8851-165979</a>
-                </div>
-
-                <div class="contact-card">
-                    <h3>Main Accountant</h3>
-                    <p style="font-size: 13px; color: #666;">Accounts Manager</p>
-                    <a href="tel:+917488987940">📞 +91 74889 87940</a>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- DONATION / PAYMENTS MODAL -->
+    <div id="donationModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('donationModal')">✕</button>
+            <div style="text-align: center;">
+                <span style="font-size: 30px;">💰</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Masjid Donation / Chanda</h3>
+                <small style="color: #666;">Masjid ke taawun ke liye online payment karein</small>
+            </div>
+
+            <div class="donation-box">
+                <p style="font-size: 12px; color: #555;">GPay / PhonePe / Paytm ke liye UPI ID:</p>
+                <div class="upi-badge">
+                    <span id="upiText">gosiyamasjid@upi</span>
+                    <button class="copy-btn" onclick="copyUPI()">Copy</button>
+                </div>
+                <p id="copyStatus" style="font-size: 11px; color: #0b3c28; display: none;">✅ Copied to clipboard!</p>
+
+                <div class="bank-details">
+                    <strong>Bank Account Details:</strong><br>
+                    • <b>Account Name:</b> Gosiya Masjid Committee<br>
+                    • <b>Account Number:</b> XXXXXXXXXXXX<br>
+                    • <b>IFSC Code:</b> SBIN000XXXX<br>
+                    • <b>Bank Name:</b> State Bank of India
+                </div>
+                <small style="display: block; margin-top: 10px; color: #888;">Note: Payment karne ke baad receipt Khazanchi ko WhatsApp karein.</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- HISAAB-KITAB MODAL -->
+    <div id="hisabModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('hisabModal')">✕</button>
+            <div style="text-align: center;">
+                <span style="font-size: 30px;">📊</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Masjid Hisaab-Kitab</h3>
+                <small style="color: #666;">Monthly Financial Summary</small>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card stat-income">
+                    <h4>Kul Aamad (Income)</h4>
+                    <p>₹ 45,000</p>
+                </div>
+                <div class="stat-card stat-expense">
+                    <h4>Kul Kharch (Expense)</h4>
+                    <p>₹ 32,500</p>
+                </div>
+                <div class="stat-card stat-balance">
+                    <h4 style="color:#0b3c28;">Masjid Balance (Bachat)</h4>
+                    <p style="color:#0b3c28; font-size:18px;">₹ 12,500</p>
+                </div>
+            </div>
+
+            <table class="custom-table" style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Kharch Item</th>
+                        <th>Raqam (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bijli Bill (Electricity)</td><td>₹ 6,500</td></tr>
+                    <tr><td>Imam & Moazzin Tankhwah</td><td>₹ 22,000</td></tr>
+                    <tr><td>Safai & Repairing</td><td>₹ 4,000</td></tr>
+                </tbody>
+            </table>
+            <small style="display: block; margin-top: 10px; text-align: center; color: #888;">Tafseeli hisaab dekhne ke liye Accountant se rabta karein.</small>
+        </div>
+    </div>
+
+    <!-- COMPLAINT / SUGGESTION MODAL (FOR PUBLIC) -->
+    <div id="complaintModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('complaintModal')">✕</button>
+            <div style="text-align: center;">
+                <span style="font-size: 30px;">✍️</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Shikayat Ya Mashwara</h3>
+                <small style="color: #666;">Aapka sandesh committee tak pahunchega</small>
+            </div>
+            <form onsubmit="submitComplaint(event)">
+                <label for="compName">Aapka Naam</label>
+                <input type="text" id="compName" placeholder="Apna naam likhein" required>
+
+                <label for="compPhone">Mobile Number</label>
+                <input type="tel" id="compPhone" placeholder="Mobile number" required>
+
+                <label for="compMsg">Shikayat / Mashwara (Details)</label>
+                <textarea id="compMsg" placeholder="Apni shikayat ya zaroori mashwara yahan likhein..." required></textarea>
+
+                <button type="submit" class="submit-button">Submit Karein</button>
+            </form>
+            <p id="compStatus" style="text-align:center; font-size:12px; margin-top:10px; display:none; color:green;">✅ Aapka sandesh bhej diya gaya hai!</p>
+        </div>
+    </div>
+
+    <!-- ANNOUNCEMENTS MODAL -->
+    <div id="noticesModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('noticesModal')">✕</button>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <span style="font-size: 30px;">📢</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Important Announcements</h3>
+                <small style="color: #666;">Masjid Committee ki taraf se zaroori ittila</small>
+            </div>
+            <div class="item-list">
+                <div class="info-item">
+                    <h4>🕌 Juma Namaz Pabandagi</h4>
+                    <p>Tammam hazraat se guzarish hai ki Juma ki namaz ke liye waqt par tashreef layein aur khutba dhyan se sunein.</p>
+                    <small>📌 Masjid Committee</small>
+                </div>
+                <div class="info-item">
+                    <h4>🧼 Safai Ka Khas Khayal</h4>
+                    <p>Wazu khane aur masjid ke sahan me safai ka khas khayal rakhein aur mobile silent par rakhein.</p>
+                    <small>📌 Notice Board</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENTS MODAL -->
+    <div id="eventsModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('eventsModal')">✕</button>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <span style="font-size: 30px;">📅</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Upcoming Events</h3>
+                <small style="color: #666;">Masjid ke aane wale programs</small>
+            </div>
+            <div class="item-list">
+                <div class="info-item">
+                    <h4>📖 Dars-e-Quran / Hadees</h4>
+                    <p>Har Ravivar (Sunday) Isha ki namaz ke baad dars ka ehtemam kiya jata hai.</p>
+                    <small>⏰ Har Sunday Baad Namaz Isha</small>
+                </div>
+                <div class="info-item">
+                    <h4>🌙 Shab-e-Juma Majlis</h4>
+                    <p>Jumerat ko baad namaz-e-Maghrib zikr aur dua ki mahfil hoti hai.</p>
+                    <small>⏰ Har Jumerat</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('contactModal')">✕</button>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <span style="font-size: 30px;">📞</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Masjid Contacts</h3>
+                <small style="color: #666;">Direct call karne ke liye button dabayein</small>
+            </div>
+            <div class="item-list">
+                <div class="contact-item">
+                    <div>
+                        <h4>Imam Sahab</h4>
+                        <p>79994 65053</p>
+                    </div>
+                    <a href="tel:7999465053" class="call-btn">📞 Call</a>
+                </div>
+
+                <div class="contact-item">
+                    <div>
+                        <h4>Khazanchi</h4>
+                        <p>+91 8851-165979</p>
+                    </div>
+                    <a href="tel:+918851165979" class="call-btn">📞 Call</a>
+                </div>
+
+                <div class="contact-item">
+                    <div>
+                        <h4>Main Accountant</h4>
+                        <p>+91 74889 87940</p>
+                    </div>
+                    <a href="tel:+917488987940" class="call-btn">📞 Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div id="adminModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeModal('adminModal')">✕</button>
+            <div style="text-align: center;">
+                <span style="font-size: 30px;">🔐</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Admin Login</h3>
+                <small style="color: #666;">Authorized personnel only</small>
+            </div>
+            <form onsubmit="adminLogin(event)">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="admin" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+                <button type="submit" class="submit-button">Login</button>
+            </form>
+            <p id="loginMessage" style="text-align:center; font-size:12px; margin-top:10px;"></p>
+        </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD (COMPLAINTS INBOX) -->
+    <div id="adminDashboardModal" class="modal-overlay">
+        <div class="modal-box" style="max-width: 500px;">
+            <button class="close-btn" onclick="closeModal('adminDashboardModal')">✕</button>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <span style="font-size: 30px;">📋</span>
+                <h3 style="color: #0b3c28; margin-top: 5px;">Admin Dashboard</h3>
+                <small style="color: #666;">Aayi hui Complaints & Mashware</small>
+            </div>
+
+            <div id="complaintsContainer">
+                <!-- Dynamic Content Loads Here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
     <script>
         function enterGuest() {
             document.getElementById('welcomeScreen').style.display = 'none';
             document.getElementById('publicWebsite').style.display = 'block';
         }
 
-        function openAdminLogin() {
-            document.getElementById('adminLoginBox').style.display = 'flex';
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
         }
 
-        function closeAdminLogin() {
-            document.getElementById('adminLoginBox').style.display = 'none';
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
         }
 
+        function copyUPI() {
+            const upi = document.getElementById('upiText').innerText;
+            navigator.clipboard.writeText(upi).then(() => {
+                const status = document.getElementById('copyStatus');
+                status.style.display = 'block';
+                setTimeout(() => { status.style.display = 'none'; }, 2000);
+            });
+        }
+
+        // COMPLAINT SUBMISSION
+        function submitComplaint(e) {
+            e.preventDefault();
+            const name = document.getElementById('compName').value;
+            const phone = document.getElementById('compPhone').value;
+            const msg = document.getElementById('compMsg').value;
+            const time = new Date().toLocaleString();
+
+            const complaint = { id: Date.now(), name, phone, msg, time };
+
+            let list = JSON.parse(localStorage.getItem('masjidComplaints') || '[]');
+            list.unshift(complaint);
+            localStorage.setItem('masjidComplaints', JSON.stringify(list));
+
+            document.getElementById('compStatus').style.display = 'block';
+            e.target.reset();
+
+            setTimeout(() => {
+                document.getElementById('compStatus').style.display = 'none';
+                closeModal('complaintModal');
+            }, 1800);
+        }
+
+        // LOAD COMPLAINTS IN ADMIN DASHBOARD
+        function loadComplaints() {
+            const container = document.getElementById('complaintsContainer');
+            const list = JSON.parse(localStorage.getItem('masjidComplaints') || '[]');
+
+            if (list.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:#888; font-size:13px; padding:20px;">Abhi koi complaint ya sandesh nahi aaya hai.</p>';
+                return;
+            }
+
+            container.innerHTML = list.map(item => `
+                <div class="complaint-item">
+                    <button class="delete-btn" onclick="deleteComplaint(${item.id})">Delete</button>
+                    <h4>👤 ${item.name} (${item.phone})</h4>
+                    <p>${item.msg}</p>
+                    <small>⏰ ${item.time}</small>
+                </div>
+            `).join('');
+        }
+
+        function deleteComplaint(id) {
+            let list = JSON.parse(localStorage.getItem('masjidComplaints') || '[]');
+            list = list.filter(item => item.id !== id);
+            localStorage.setItem('masjidComplaints', JSON.stringify(list));
+            loadComplaints();
+        }
+
+        // ADMIN LOGIN
         function adminLogin(e) {
             e.preventDefault();
             const u = document.getElementById('username').value;
@@ -617,22 +984,21 @@
                 msg.style.color = 'green';
                 msg.innerText = 'Login successful!';
                 setTimeout(() => {
-                    closeAdminLogin();
+                    closeModal('adminModal');
                     enterGuest();
-                }, 1000);
+                    loadComplaints();
+                    openModal('adminDashboardModal');
+                }, 800);
             } else {
                 msg.style.color = 'red';
                 msg.innerText = 'Galat username ya password!';
             }
         }
 
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        function closeMobileMenu() {
-            document.getElementById('mobileMenu').style.display = 'none';
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = 'none';
+            }
         }
     </script>
 </body>
